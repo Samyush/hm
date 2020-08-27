@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../reuse_card.dart';
-import '../constants.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../constants.dart';
+import '../reuse_card.dart';
 //import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 
 class Searches extends StatefulWidget {
@@ -87,7 +88,8 @@ class _SearchesState extends State<Searches> {
             Column(
               children: <Widget>[
                 ReuseCard(
-                  colour: Colors.white,
+                  // colour: Color(0xFFE8E8E8),
+                  colour: Color(0xFFD6D3CA),
                   height: 110,
                   onTap: () {
                     setState(() {
@@ -287,7 +289,7 @@ class _SearchesState extends State<Searches> {
                   },
                 ),
                 ReuseCard(
-                  colour: Colors.white,
+                  colour: Color(0xFFD6D3CA),
                   height: 110,
                   cardChild: Row(
                     children: <Widget>[

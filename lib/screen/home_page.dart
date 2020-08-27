@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:hm/screen/groupMessage.dart';
-import '../reuse_card.dart';
-import '../constants.dart';
-import 'sliderImg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../constants.dart';
+import '../reuse_card.dart';
+import 'sliderImg.dart';
+
 enum Gender { male, female }
-double h1 = 75;
+
+double h1 = 65;
 
 class MyHomePage extends StatefulWidget {
   static const String id = 'home_page';
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -113,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   height: h1,
                   cardChild: Center(
                     child: Image(
-                      image: AssetImage('images/a2.gif'),
+                      image: AssetImage('images/culinary.png'),
                     ),
                   ),
                   onTap: () {
@@ -122,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           'https://drive.google.com/drive/folders/1bdEi3N0AT1HKvkV0AEtyaXEA3kjq6Veq?usp=sharing');
                     });
                   },
-                  colour: Color(0xFF1268BB),
+                  colour: Color(0xFF0034C2),
                 ),
               ),
               Expanded(
@@ -140,7 +143,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           'https://culinaryarts.com.np/');
                     });
                   },
-                  colour: Color(0xFF676767),
+                  // colour: Color(0xFF676767),
+                  colour: Color(0xFFD6D3CA),
                 ),
               ),
             ],
@@ -165,7 +169,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           _sendAMail('mailto: info@culinaryarts.com.np');
                     });
                   },
-                  colour: Color(0xFF838587),
+                  // colour: Color(0xFF838587),
+                  colour: Color(0xFFD6D3CA),
+
 //                    cardChild: IconContent(
 //                      icon: FontAwesomeIcons.mars,
 //                      label: 'MALE',
@@ -178,7 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   cardChild: Center(
                     child: Image(
-                      image: AssetImage('images/cal.png'),
+                      image: AssetImage('images/call.png'),
                     ),
                   ),
                   onTap: () {
@@ -186,7 +192,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       _launched = _makePhoneCall('tel:$_phone');
                     });
                   },
-                  colour: Color(0xFF1268BB),
+                  colour: Color(0xFF127538),
 //                    cardChild: IconContent(
 //                      icon: FontAwesomeIcons.venus,
 //                      label: 'FEMALE',
@@ -231,7 +237,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           'https://www.instagram.com/aca.nepal/');
                     });
                   },
-                  colour: Color(0xFFB1B1B1),
+                  // colour: Color(0xFFB1B1B1),
+                  colour: Color(0xFFD6D3CA),
                 ),
               ),
             ],
@@ -256,7 +263,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           'https://www.youtube.com/channel/UCHPc2ESR4jv8bWwCW1Rspww');
                     });
                   },
-                  colour: Color(0xFFCDCDCD),
+                  // colour: Color(0xFFCDCDCD),
+                  colour: Color(0xFFD6D3CA),
+
 //                    cardChild: IconContent(
 //                      icon: FontAwesomeIcons.mars,
 //                      label: 'MALE',
@@ -277,7 +286,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       _launched = _makePhoneCall('tel:$_phone');
                     });
                   },
-                  colour: Color(0xFF1268BB),
+                  colour: Color(0xFF127538),
 //                    cardChild: IconContent(
 //                      icon: FontAwesomeIcons.venus,
 //                      label: 'FEMALE',

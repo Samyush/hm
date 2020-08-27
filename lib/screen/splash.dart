@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hm/bottomNavigation.dart';
+import 'package:hm/screen/welcomescreen.dart';
 //import 'package:schools/screens/home_page.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -31,7 +31,9 @@ class _SplashDisplayState extends State<SplashDisplay> {
                 ),
               ),
               seconds: 5,
-              navigateAfterSeconds: BottomNavigationss(),
+              // navigateAfterSeconds: BottomNavigationss(),
+              navigateAfterSeconds: WelcomeScreen(),
+
               image: Image.asset(
                 'images/logo.jpg',
 //                  height: 60,

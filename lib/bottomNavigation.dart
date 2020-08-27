@@ -1,11 +1,11 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hm/screen/accademics.dart';
 import 'package:hm/screen/search.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
+import 'screen/calendar.dart';
 import 'screen/home_page.dart';
 import 'screen/profile.dart';
-import 'screen/calendar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavigationss extends StatefulWidget {
   static const String id = 'nav_page';
@@ -17,13 +17,14 @@ class BottomNavigationss extends StatefulWidget {
 class _BottomNavigationssState extends State<BottomNavigationss> {
   int _currentIndex = 0;
   final _pages = [MyHomePage(), Searches(), Academics(), Calendar(), Profile()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
 //        color: Colors.grey,
-        backgroundColor: Color(0xFF97C064),
-        buttonBackgroundColor: Colors.white,
+        backgroundColor: Colors.white,
+        buttonBackgroundColor: Color(0xFFC7C7C7),
         height: 55,
 //        backgroundColor: Colors.black,
         items: <Widget>[
