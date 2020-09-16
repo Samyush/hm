@@ -46,8 +46,8 @@ const kTextAppBarStyle = TextStyle(
 );
 
 const kNavigationIcon = Icon(
-  Icons.message,
-  color: Colors.black,
+  Icons.cancel,
+  color: Colors.red,
   size: 35,
 );
 

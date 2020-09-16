@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hm/screen/welcomescreen.dart';
-//import 'package:schools/screens/home_page.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class SplashDisplay extends StatefulWidget {

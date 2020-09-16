@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hm/screen/groupMessage.dart';
+import 'package:hm/screen/login_screen.dart';
+import 'package:hm/screen/welcomescreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
@@ -18,10 +20,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  SharedPreferences sharedPreferences;
+
   Future<void> _launched;
   Gender selectedGender;
   String height = 'Photos';
   String _phone = '+977-01-5522909';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    checkLoginStatus();
+  }
 
   @override
   void dispose() {
@@ -29,6 +40,15 @@ class _MyHomePageState extends State<MyHomePage> {
     super.dispose();
 //    SliderImg.dispose();
     SliderImg();
+  }
+
+  checkLoginStatus() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    if (sharedPreferences.getString("token") == null) {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => LoginScreen()),
+          (Route<dynamic> route) => false);
+    }
   }
 
 //  for making a phone call
@@ -76,8 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: kNavigationIcon,
             tooltip: 'Show Snackbar',
             onPressed: () {
+              sharedPreferences.clear();
+              sharedPreferences.commit();
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => WelcomeScreen()),
+                      (Route<dynamic> route) => false);
 //        scaffoldKey.currentState.showSnackBar(snackBar);
-              Navigator.pushNamed(context, ChatScreen.id);
+//               Navigator.pushNamed(context, ChatScreen.id);
             },
           ),
         ],
