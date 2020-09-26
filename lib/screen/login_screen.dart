@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Map data = {'email': email, 'password': pass};
     var jsonResponse = null;
     var response =
-        await http.post("http://192.168.31.46:8000/api/login", body: data);
+        await http.post("http://192.168.31.47:8000/api/login", body: data);
     if (response.statusCode == 200) {
       jsonResponse = json.decode(response.body);
       print('Response status: ${response.statusCode}');

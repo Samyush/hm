@@ -31,7 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    checkLoginStatus();
+    // checkLoginStatus();
   }
 
   @override
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                       builder: (BuildContext context) => WelcomeScreen()),
-                      (Route<dynamic> route) => false);
+                  (Route<dynamic> route) => false);
 //        scaffoldKey.currentState.showSnackBar(snackBar);
 //               Navigator.pushNamed(context, ChatScreen.id);
             },
