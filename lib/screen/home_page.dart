@@ -31,6 +31,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    //this part of code is to completed
     // checkLoginStatus();
   }
 

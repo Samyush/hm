@@ -27,6 +27,8 @@ class SliderImg extends StatelessWidget {
             borderRadius: true,
             radius: Radius.circular(0),
             images: [
+              // Image.network(
+              // 'https://drive.google.com/file/d/1dItXi6vUu5dmQoR89B5WiTP1ch1eR8E8/view?usp=sharing'),
               AssetImage('images/one.jpg'),
               AssetImage('images/two.jpg'),
               AssetImage('images/three.jpg'),
