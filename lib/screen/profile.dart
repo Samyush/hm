@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'file:///C:/FlutterApps/workFrames/hm/lib/commonFunction/constants.dart';
+import 'package:hm/commonFunction/constants.dart';
 
 class Profile extends StatefulWidget {
   static const String id = 'profile_page';
