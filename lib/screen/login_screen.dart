@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hm/bottomNavigation.dart';
-import 'package:hm/constants.dart';
 import 'package:hm/screen/rounded_button.dart';
 import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'file:///C:/FlutterApps/workFrames/hm/lib/commonFunction/constants.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -143,17 +144,17 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               RoundedButton(
                 onPressed: emailController.text == "" ||
-                    passwordController.text == ""
+                        passwordController.text == ""
                     ? _showMyDialog
                     : () {
-                  setState(
-                        () {
-                      showSpinner = true;
-                    },
-                  );
-                  signIn(emailController.text, passwordController.text);
-                  // Navigator.pushNamed(context, BottomNavigationss.id);
-                },
+                        setState(
+                          () {
+                            showSpinner = true;
+                          },
+                        );
+                        signIn(emailController.text, passwordController.text);
+                        // Navigator.pushNamed(context, BottomNavigationss.id);
+                      },
                 title: 'Log In',
                 color: Colors.blueAccent,
               ),

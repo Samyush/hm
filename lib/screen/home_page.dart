@@ -4,8 +4,8 @@ import 'package:hm/screen/welcomescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants.dart';
-import '../reuse_card.dart';
+import '../commonFunction/constants.dart';
+import '../commonFunction/reuse_card.dart';
 import 'sliderImg.dart';
 
 enum Gender { male, female }

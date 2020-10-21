@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../constants.dart';
-import '../reuse_card.dart';
+import '../commonFunction/constants.dart';
+import '../commonFunction/reuse_card.dart';
 //import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 
 class Searches extends StatefulWidget {
