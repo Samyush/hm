@@ -100,7 +100,7 @@ class _CalendarWorkState extends State<CalendarWork>
   }
 
   void _onDaySelected(DateTime day, List events) {
-    print('CALLBACK: _onDaySelected');
+    print('CALLBACK: _onDaySelected1');
     setState(() {
       _selectedEvents = events;
     });
@@ -108,12 +108,12 @@ class _CalendarWorkState extends State<CalendarWork>
 
   void _onVisibleDaysChanged(
       DateTime first, DateTime last, CalendarFormat format) {
-    print('CALLBACK: _onVisibleDaysChanged');
+    print('CALLBACK: _onVisibleDaysChanged2');
   }
 
   void _onCalendarCreated(
       DateTime first, DateTime last, CalendarFormat format) {
-    print('CALLBACK: _onCalendarCreated');
+    print('CALLBACK: _onCalendarCreated3');
   }
 
   @override
@@ -143,8 +143,8 @@ class _CalendarWorkState extends State<CalendarWork>
       holidays: _holidays,
       startingDayOfWeek: StartingDayOfWeek.monday,
       calendarStyle: CalendarStyle(
-        selectedColor: Colors.red[700],
-        todayColor: Colors.deepOrange[200],
+        selectedColor: Colors.orange,
+        todayColor: Colors.lightGreen,
         markersColor: Colors.brown[700],
         outsideDaysVisible: false,
       ),
