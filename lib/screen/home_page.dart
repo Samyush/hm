@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hm/commonFunction/commonFunctions.dart';
 import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/welcomescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../commonFunction/constants.dart';
 import '../commonFunction/reuse_card.dart';
@@ -53,38 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-//  for making a phone call
-  Future<void> _makePhoneCall(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  Future<void> _sendAMail(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-//  for opening links
-
-  Future<void> _launchInWebViewWithJavaScript(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: true,
-        forceWebView: true,
-        enableJavaScript: true,
-      );
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,8 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-
-//
     );
   }
 
@@ -149,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/drive/folders/1bdEi3N0AT1HKvkV0AEtyaXEA3kjq6Veq?usp=sharing');
                     });
                   },
@@ -167,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://culinaryarts.com.np/');
                     });
                   },
@@ -193,23 +159,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched =
-                          _sendAMail('mailto: info@culinaryarts.com.np');
+                      _launched = CommonFunction.sendAMail(
+                          'mailto: info@culinaryarts.com.np');
                     });
                   },
                   // colour: Color(0xFF838587),
                   colour: Color(0xFFD6D3CA),
-
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.mars,
-//                      label: 'MALE',
-//                    ),
                 ),
               ),
               Expanded(
                 child: ReuseCard(
                   height: h1,
-
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/call.png'),
@@ -217,14 +177,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _makePhoneCall('tel:$_phone');
+                      _launched = CommonFunction.makePhoneCall('tel:$_phone');
                     });
                   },
                   colour: Color(0xFF127538),
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.venus,
-//                      label: 'FEMALE',
-//                    ),
                 ),
               ),
             ],
@@ -243,7 +199,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.facebook.com/culinaryarts.nepal/');
                     });
                   },
@@ -261,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.instagram.com/aca.nepal/');
                     });
                   },
@@ -287,23 +243,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.youtube.com/channel/UCHPc2ESR4jv8bWwCW1Rspww');
                     });
                   },
                   // colour: Color(0xFFCDCDCD),
                   colour: Color(0xFFD6D3CA),
-
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.mars,
-//                      label: 'MALE',
-//                    ),
                 ),
               ),
               Expanded(
                 child: ReuseCard(
                   height: h1,
-
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/twitter.png'),
@@ -311,14 +261,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _makePhoneCall('tel:$_phone');
+                      _launched = CommonFunction.makePhoneCall('tel:$_phone');
                     });
                   },
                   colour: Color(0xFF127538),
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.venus,
-//                      label: 'FEMALE',
-//                    ),
                 ),
               ),
             ],

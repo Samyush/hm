@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
+
+import 'package:hm/commonFunction/commonFunctions.dart';
 
 import '../commonFunction/constants.dart';
 import '../commonFunction/reuse_card.dart';
-//import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 
 class Searches extends StatefulWidget {
   static const String id = 'second_page';
@@ -54,27 +55,6 @@ class _SearchesState extends State<Searches> {
     );
   }
 
-  Future<void> _launchInWebViewWithJavaScript(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: true,
-        forceWebView: true,
-        enableJavaScript: true,
-      );
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  Future<void> _sendAMail(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,7 +73,7 @@ class _SearchesState extends State<Searches> {
                   height: 110,
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/drive/folders/1CSxfGzFu4tyeNFdf2Wy0ili4lKLz3-Vq?usp=sharing');
                     });
                   },
@@ -122,7 +102,7 @@ class _SearchesState extends State<Searches> {
                   height: 130,
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/open?id=1dX66k6YPlV_YfjRXyxZU2VJQY4pf-w9R');
                     });
                   },
@@ -151,7 +131,7 @@ class _SearchesState extends State<Searches> {
                   height: 150,
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/open?id=1l8aER69j9PFWNGxeiDDgwLVJlQTnzCE4');
                     });
                   },
@@ -215,7 +195,7 @@ class _SearchesState extends State<Searches> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/open?id=1hkvasLoFOSZKiN4KvZtRBDauAPpEimyg');
                     });
                   },
@@ -283,8 +263,8 @@ class _SearchesState extends State<Searches> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched =
-                          _sendAMail('mailto: samyushmaharjan@outlook.com');
+                      _launched = CommonFunction.sendAMail(
+                          'mailto: samyushmaharjan@outlook.com');
                     });
                   },
                 ),
@@ -317,7 +297,7 @@ class _SearchesState extends State<Searches> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      _launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.facebook.com/samyush.maharjan');
                     });
                   },
