@@ -7,8 +7,8 @@ import 'package:hm/screen/rounded_button.dart';
 import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:hm/commonFunction/constants.dart';
 
-import 'file:///C:/FlutterApps/workFrames/hm/lib/commonFunction/constants.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
