@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:hm/commonFunction/commonFunctions.dart';
 import 'package:hm/commonFunction/constants.dart';
 
 class Profile extends StatefulWidget {
@@ -81,36 +81,6 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class NameCard extends StatelessWidget {
-  NameCard({this.label, this.icons});
-
-  final String label;
-  final Icon icons;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: Color(0xFFB4B356),
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-      child: Padding(
-        padding: EdgeInsets.all(4),
-        child: ListTile(
-          leading: icons,
-          title: Text(
-            '$label',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: 'Acme',
-              letterSpacing: 3,
-            ),
-          ),
         ),
       ),
     );

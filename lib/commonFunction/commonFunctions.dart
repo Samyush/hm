@@ -75,3 +75,33 @@ class CommonFunction {
     );
   }
 }
+
+class NameCard extends StatelessWidget {
+  NameCard({this.label, this.icons});
+
+  final String label;
+  final Icon icons;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Color(0xFFB4B356),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+      child: Padding(
+        padding: EdgeInsets.all(4),
+        child: ListTile(
+          leading: icons,
+          title: Text(
+            '$label',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontFamily: 'Acme',
+              letterSpacing: 3,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
