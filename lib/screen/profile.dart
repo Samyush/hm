@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hm/commonFunction/commonFunctions.dart';
 import 'package:hm/commonFunction/constants.dart';
 
+//have to add api calling and update the logged in user info here
+
 class Profile extends StatefulWidget {
   static const String id = 'profile_page';
 

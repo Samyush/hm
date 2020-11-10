@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hm/commonFunction/constants.dart';
 
+//will add emoji my clg and rating feature here
 
 class Academics extends StatefulWidget {
   @override
