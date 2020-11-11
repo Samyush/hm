@@ -68,7 +68,7 @@ class _BottomNavigationssState extends State<BottomNavigationss> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            print(_currentIndex);
+            // print(_currentIndex);
           });
         },
       ),

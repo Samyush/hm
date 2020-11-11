@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hm/screen/welcomescreen.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'package:hm/support/splashHelper.dart';
 
 class SplashDisplay extends StatefulWidget {
   static const String id = 'splash_page';

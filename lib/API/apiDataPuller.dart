@@ -1,7 +1,6 @@
 import 'networking.dart';
 
-const apiIs = 'http://192.168.31.47:8000/api/login';
-const openWeatherMapURL = 'https://api.openweathermap.org/data/2.5/weather';
+const apiIs = 'http://192.168.56.1:8000/api/currentUsr';
 
 class ApiPuller {
   //

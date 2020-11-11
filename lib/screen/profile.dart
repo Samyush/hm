@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hm/API/apiDataPuller.dart';
 import 'package:hm/commonFunction/commonFunctions.dart';
 import 'package:hm/commonFunction/constants.dart';
 
@@ -17,7 +18,8 @@ class _ProfileState extends State<Profile> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    // ApiPuller.getUserDetail();
+    ApiPuller.getUserDetail();
+    print('hello world');
     // getUserDetail();
   }
 
