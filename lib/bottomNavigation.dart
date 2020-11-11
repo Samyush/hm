@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hm/screen/accademics.dart';
 import 'package:hm/screen/search.dart';
 
+import 'API/apiDataPuller.dart';
 import 'screen/calendar.dart';
 import 'screen/home_page.dart';
 import 'screen/profile.dart';
@@ -17,6 +18,13 @@ class BottomNavigationss extends StatefulWidget {
 class _BottomNavigationssState extends State<BottomNavigationss> {
   int _currentIndex = 0;
   final _pages = [MyHomePage(), Searches(), Academics(), Calendar(), Profile()];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ApiPuller.getUserDetail();
+  }
 
   @override
   Widget build(BuildContext context) {
