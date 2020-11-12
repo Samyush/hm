@@ -2,55 +2,35 @@ import 'dart:async';
 import 'dart:core';
 
 import 'package:flutter/material.dart';
+import 'package:hm/screen/welcomescreen.dart';
 
-class SplashScreen extends StatefulWidget {
-  final int seconds;
-  final Text title;
+class SplashDisplay extends StatefulWidget {
   final Color backgroundColor;
-  final TextStyle styleTextUnderTheLoader;
-  final dynamic navigateAfterSeconds;
-  final double photoSize;
   final dynamic onClick;
-  final Color loaderColor;
-  final Image image;
-  final Text loadingText;
   final ImageProvider imageBackground;
   final Gradient gradientBackground;
-  SplashScreen(
-      {this.loaderColor,
-      @required this.seconds,
-      this.photoSize,
-      this.onClick,
-      this.navigateAfterSeconds,
-      this.title = const Text(''),
+  SplashDisplay(
+      {this.onClick,
       this.backgroundColor = Colors.white,
-      this.styleTextUnderTheLoader = const TextStyle(
-          fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black),
-      this.image,
-      this.loadingText = const Text(""),
       this.imageBackground,
       this.gradientBackground});
 
+  static const String id = 'splash_page';
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  _SplashDisplayState createState() => _SplashDisplayState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashDisplayState extends State<SplashDisplay> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: widget.seconds), () {
-      if (widget.navigateAfterSeconds is String) {
-        // It's fairly safe to assume this is using the in-built material
-        // named route component
-        Navigator.of(context).pushReplacementNamed(widget.navigateAfterSeconds);
-      } else if (widget.navigateAfterSeconds is Widget) {
-        Navigator.of(context).pushReplacement(new MaterialPageRoute(
-            builder: (BuildContext context) => widget.navigateAfterSeconds));
-      } else {
-        throw new ArgumentError(
-            'widget.navigateAfterSeconds must either be a String or Widget');
-      }
+    Timer(Duration(seconds: 5), () {
+      // It's fairly safe to assume this is using the in-built material
+      // named route component
+
+      Navigator.of(context).pushReplacement(new MaterialPageRoute(
+          builder: (BuildContext context) => WelcomeScreen()));
     });
   }
 
@@ -85,13 +65,26 @@ class _SplashScreenState extends State<SplashScreen> {
                     children: <Widget>[
                       new CircleAvatar(
                         backgroundColor: Colors.transparent,
-                        child: new Container(child: widget.image),
-                        radius: widget.photoSize,
+                        child: new Container(
+                          child: Image.asset(
+                            'images/logo.jpg',
+//                  height: 60,
+                          ),
+                        ),
+                        radius: 150.0,
                       ),
                       new Padding(
                         padding: const EdgeInsets.only(top: 10.0),
                       ),
-                      widget.title
+                      Text(
+                        'Culinary Arts',
+                        style: new TextStyle(
+                          color: Colors.red,
+                          fontFamily: 'Acme',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                        ),
+                      ),
                     ],
                   )),
                 ),
@@ -101,13 +94,19 @@ class _SplashScreenState extends State<SplashScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       CircularProgressIndicator(
-                        valueColor: new AlwaysStoppedAnimation<Color>(
-                            widget.loaderColor),
+                        valueColor:
+                            new AlwaysStoppedAnimation<Color>(Colors.red),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20.0),
                       ),
-                      widget.loadingText
+                      Text(
+                        'POWERED by SAMYUSH',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Acme',
+                        ),
+                      ),
                     ],
                   ),
                 ),

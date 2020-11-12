@@ -19,7 +19,6 @@ dependencies:
   shared_preferences: ^0.5.10
   http: ^0.12.2
   font_awesome_flutter: ^8.8.1
-  splashscreen: ^1.2.0
   curved_navigation_bar: ^0.3.2
   carousel_pro: ^1.0.0
   table_calendar: ^2.2.3
