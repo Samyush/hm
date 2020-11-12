@@ -29,8 +29,6 @@ dependencies:
   flutter_spinkit: "^4.1.2"
   #  flutter_open_whatsapp: ^0.1.2
 
-  google_maps_flutter: ^0.5.27+3
-  location: ^3.0.2
 
 dev_dependencies:
   flutter_test:
