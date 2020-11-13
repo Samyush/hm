@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     //this part of code is to completed
-    checkLoginStatus();
+    // checkLoginStatus();
   }
 
   @override

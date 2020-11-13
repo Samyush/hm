@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
       //the following code removes the debugger label
       // debugShowCheckedModeBanner: false,
       title: 'ACA APP',
-//       theme: ThemeData().copyWith(
-// //        primaryColor: Color(0xFF111118),
-//         primaryColor: Colors.white,
-//         // scaffoldBackgroundColor: Color(0xFFCAE9BB),
-//       ),
+      theme: ThemeData().copyWith(
+//        primaryColor: Color(0xFF111118),
+        primaryColor: Colors.white,
+        // scaffoldBackgroundColor: Color(0xFFCAE9BB),
+      ),
 //      home: MyHomePage(),
       initialRoute: SplashDisplay.id,
       routes: {
