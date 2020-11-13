@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget socialMedia() {
-    return ListView(
+    return Column(
       children: [
         Expanded(
           child: Row(
