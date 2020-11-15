@@ -8,8 +8,6 @@ import '../commonFunction/constants.dart';
 import '../commonFunction/reuse_card.dart';
 import 'sliderImg.dart';
 
-enum Gender { male, female }
-
 double h1 = 65;
 
 class MyHomePage extends StatefulWidget {
@@ -23,7 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
   SharedPreferences sharedPreferences;
 
   Future<void> _launched;
-  Gender selectedGender;
   String height = 'Photos';
   String _phone = '+977-01-5522909';
 

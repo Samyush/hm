@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hm/commonFunction/constants.dart';
 import 'package:hm/commonFunction/reuse_card.dart';
-import 'package:hm/commonFunction/toDelete.dart';
+import 'package:hm/commonFunction/roundedIconButton.dart';
 import 'package:hm/commonFunction/toDelete2.dart';
 
 //will add emoji my clg and rating feature here
@@ -16,7 +16,7 @@ class Academics extends StatefulWidget {
 
 class _AcademicsState extends State<Academics> {
   Emoji selectedEmoji;
-  int height = 180;
+  int height = 5;
   int weight = 70;
   int age = 20;
 
@@ -26,6 +26,15 @@ class _AcademicsState extends State<Academics> {
       appBar: AppBar(
         leading: kLeadingNav,
         title: kAppbarTitle,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FontAwesomeIcons.shareSquare, color: Colors.black,),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+
+            },
+          ),
+        ],
         backgroundColor: Colors.white,
       ),
       body: Column(
@@ -45,8 +54,8 @@ class _AcademicsState extends State<Academics> {
                         ? kActiveColor
                         : kInactiveColor,
                     cardChild: IconCont(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
+                      icon: FontAwesomeIcons.smile,
+                      label: 'HAPPY',
                     ),
                   ),
                 ),
@@ -61,8 +70,8 @@ class _AcademicsState extends State<Academics> {
                         ? kActiveColor
                         : kInactiveColor,
                     cardChild: IconCont(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
+                      icon: FontAwesomeIcons.frownOpen,
+                      label: 'NOT HAPPY',
                     ),
                   ),
                 ),
@@ -72,7 +81,7 @@ class _AcademicsState extends State<Academics> {
           Expanded(
 //            flex: 3,
             child: ReuseCard(
-              colour: kActiveColor,
+              colour: kInactiveColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -85,14 +94,18 @@ class _AcademicsState extends State<Academics> {
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
+                      Icon(
+                          FontAwesomeIcons.star
+                        //style: kTextLabelStyle,
+                      ),
                       Text(
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Text(
-                        'cm',
-                        style: kTextLabelStyle,
-                      )
+                      Icon(
+                        FontAwesomeIcons.star
+                        //style: kTextLabelStyle,
+                      ),
                     ],
                   ),
                   SliderTheme(
@@ -107,8 +120,8 @@ class _AcademicsState extends State<Academics> {
                             RoundSliderOverlayShape(overlayRadius: 30)),
                     child: Slider(
                       value: height.toDouble(),
-                      min: 120.0,
-                      max: 220.0,
+                      min: 0.0,
+                      max: 10.0,
 //                      activeColor: Color(0xFFEB1555),
 //                      inactiveColor: Color(0xFF8D8E98),
                       onChanged: (double newValue) {
@@ -128,12 +141,12 @@ class _AcademicsState extends State<Academics> {
               children: <Widget>[
                 Expanded(
                   child: ReuseCard(
-                    colour: kActiveColor,
+                    colour: kInactiveColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'WEIGHT',
+                          'College infrastructure',
                           style: kTextLabelStyle,
                         ),
                         Text(
@@ -144,7 +157,7 @@ class _AcademicsState extends State<Academics> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             RoundIconButton(
-                              icon: FontAwesomeIcons.minus,
+                              icon: FontAwesomeIcons.thumbsDown,
                               onPressed: () {
                                 setState(() {
                                   weight--;
@@ -157,7 +170,7 @@ class _AcademicsState extends State<Academics> {
                             FloatingActionButton(
                               backgroundColor: Color(0xFF4C4F5E),
                               child: Icon(
-                                Icons.add,
+                                FontAwesomeIcons.thumbsUp,
                                 color: Colors.white,
                               ),
                               onPressed: () {
@@ -174,12 +187,12 @@ class _AcademicsState extends State<Academics> {
                 ),
                 Expanded(
                   child: ReuseCard(
-                    colour: kActiveColor,
+                    colour: kInactiveColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          'AGE',
+                          'Education Quality',
                           style: kTextLabelStyle,
                         ),
                         Text(
@@ -190,7 +203,7 @@ class _AcademicsState extends State<Academics> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             RoundIconButton(
-                              icon: FontAwesomeIcons.minus,
+                              icon: FontAwesomeIcons.thumbsDown,
                               onPressed: () {
                                 setState(() {
                                   age--;
@@ -200,8 +213,12 @@ class _AcademicsState extends State<Academics> {
                             SizedBox(
                               width: 10,
                             ),
-                            RoundIconButton(
-                              icon: FontAwesomeIcons.plus,
+                            FloatingActionButton(
+                              backgroundColor: Color(0xFF4C4F5E),
+                              child: Icon(
+                                FontAwesomeIcons.thumbsUp,
+                                color: Colors.white,
+                              ),
                               onPressed: () {
                                 setState(() {
                                   age++;

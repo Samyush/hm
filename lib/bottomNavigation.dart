@@ -1,6 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:hm/screen/accademics.dart';
+import 'package:hm/screen/academic.dart';
 import 'package:hm/screen/search.dart';
 
 import 'API/apiDataPuller.dart';
