@@ -77,7 +77,7 @@ class _AcademicsState extends State<Academics> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'HEIGHT',
+                    'Rate My College',
                     style: kTextLabelStyle,
                   ),
                   Row(
