@@ -28,11 +28,12 @@ class _AcademicsState extends State<Academics> {
         title: kAppbarTitle,
         actions: <Widget>[
           IconButton(
-            icon: Icon(FontAwesomeIcons.shareSquare, color: Colors.black,),
+            icon: Icon(
+              FontAwesomeIcons.shareSquare,
+              color: Colors.black,
+            ),
             tooltip: 'Show Snackbar',
-            onPressed: () {
-
-            },
+            onPressed: () {},
           ),
         ],
         backgroundColor: Colors.white,
@@ -94,18 +95,16 @@ class _AcademicsState extends State<Academics> {
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
-                      Icon(
-                          FontAwesomeIcons.star
-                        //style: kTextLabelStyle,
-                      ),
+                      Icon(FontAwesomeIcons.star
+                          //style: kTextLabelStyle,
+                          ),
                       Text(
                         height.toString(),
                         style: kNumberTextStyle,
                       ),
-                      Icon(
-                        FontAwesomeIcons.star
-                        //style: kTextLabelStyle,
-                      ),
+                      Icon(FontAwesomeIcons.star
+                          //style: kTextLabelStyle,
+                          ),
                     ],
                   ),
                   SliderTheme(
