@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       //the following code removes the debugger label
-      // debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       title: 'ACA APP',
       theme: ThemeData().copyWith(
 //        primaryColor: Color(0xFF111118),
