@@ -4,7 +4,7 @@ import 'package:hm/API/apiDataPuller.dart';
 import 'package:hm/commonFunction/commonFunctions.dart';
 import 'package:hm/commonFunction/constants.dart';
 
-//have to add api calling and update the logged in user info here
+//api called but the string values are yet to be updated
 
 class Profile extends StatefulWidget {
   static const String id = 'profile_page';
