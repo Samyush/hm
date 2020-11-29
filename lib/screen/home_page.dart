@@ -8,7 +8,7 @@ import '../commonFunction/constants.dart';
 import '../commonFunction/reuse_card.dart';
 import 'sliderImg.dart';
 
-double h1 = 65;
+// double h1 = 65;
 
 class MyHomePage extends StatefulWidget {
   static const String id = 'home_page';
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Expanded(
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/culinary.png'),
@@ -122,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/website.png'),
@@ -147,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
 
                   cardChild: Center(
                     child: Image(
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Expanded(
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/call.png'),
@@ -188,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Expanded(
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/facebook.png'),
@@ -206,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/insta.png'),
@@ -231,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
 
                   cardChild: Center(
                     child: Image(
@@ -250,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Expanded(
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/twitter.png'),
