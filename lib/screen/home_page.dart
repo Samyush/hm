@@ -20,7 +20,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   SharedPreferences sharedPreferences;
 
-  Future<void> _launched;
+  Future<void> onLaunched;
   String height = 'Photos';
   String _phone = '+977-01-5522909';
 
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     //this part of code is to be completed and is for checking if the user is logged in or not but for now, it is commented
-    // checkLoginStatus();
+    checkLoginStatus();
   }
 
   @override
@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/drive/folders/1bdEi3N0AT1HKvkV0AEtyaXEA3kjq6Veq?usp=sharing');
                     });
                   },
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://culinaryarts.com.np/');
                     });
                   },
@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.sendAMail(
+                      onLaunched = CommonFunction.sendAMail(
                           'mailto: info@culinaryarts.com.np');
                     });
                   },
@@ -174,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.makePhoneCall('tel:$_phone');
+                      onLaunched = CommonFunction.makePhoneCall('tel:$_phone');
                     });
                   },
                   colour: Color(0xFF127538),
@@ -196,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.facebook.com/culinaryarts.nepal/');
                     });
                   },
@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.instagram.com/aca.nepal/');
                     });
                   },
@@ -240,7 +240,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.youtube.com/channel/UCHPc2ESR4jv8bWwCW1Rspww');
                     });
                   },
@@ -258,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.makePhoneCall('tel:$_phone');
+                      onLaunched = CommonFunction.makePhoneCall('tel:$_phone');
                     });
                   },
                   colour: Color(0xFF127538),
