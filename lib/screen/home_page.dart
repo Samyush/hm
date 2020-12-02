@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     //this part of code is to be completed and is for checking if the user is logged in or not but for now, it is commented
-    checkLoginStatus();
+    // checkLoginStatus();
   }
 
   @override
