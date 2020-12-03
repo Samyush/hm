@@ -9,19 +9,40 @@ import 'package:hm/commonFunction/constants.dart';
 class Profile extends StatefulWidget {
   static const String id = 'profile_page';
 
+  // final userData;
+  // Profile({this.userData});
+
   @override
   _ProfileState createState() => _ProfileState();
 }
 
 class _ProfileState extends State<Profile> {
+  // ApiPuller currentUsr = ApiPuller();
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     ApiPuller.getUserDetail();
+    // updateUI(widget.userData);
     print('hello world');
     // getUserDetail();
   }
+
+  // void updateUI(dynamic userData) {
+  //   setState(() {
+  //     if (userData == null) {
+  //       id = 0;
+  //       name = 'Error';
+  //       email = 'Unable to get data';
+  //       return;
+  //     }
+  //     // id = userData['user']['id'];
+  //     // id = id.toInt();
+  //     // name = userData['user']['name'];
+  //     // email = userData['user']['email'];
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -70,21 +91,21 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 NameCard(
-                  label: 'Student ID:  S001',
+                  label: 'Student ID:  $idsTxt',
                   icons: Icon(
                     Icons.perm_identity,
                     color: Colors.white,
                   ),
                 ),
                 NameCard(
-                  label: 'Name: Tom Cruise',
+                  label: 'Name: $nameTxt',
                   icons: Icon(
                     FontAwesomeIcons.child,
                     color: Colors.white,
                   ),
                 ),
                 NameCard(
-                  label: 'Year: 1st',
+                  label: 'Email: $emailTxt',
                   icons: Icon(
                     FontAwesomeIcons.voteYea,
                     color: Colors.white,

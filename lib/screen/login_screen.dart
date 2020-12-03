@@ -9,7 +9,6 @@ import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-const apiIS = 'http://192.168.56.1:8000/api/login';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
@@ -68,7 +67,8 @@ class _LoginScreenState extends State<LoginScreen> {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     Map data = {'email': email, 'password': pass};
     var jsonResponse;
-    var response = await http.post(apiIS, body: data);
+    //kApiLogin is in constants.dart
+    var response = await http.post(kApiLogin, body: data);
     if (response.statusCode == 200) {
       jsonResponse = json.decode(response.body);
       print('Response status: ${response.statusCode}');
