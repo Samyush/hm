@@ -9,9 +9,6 @@ import 'package:hm/commonFunction/constants.dart';
 class Profile extends StatefulWidget {
   static const String id = 'profile_page';
 
-  // final userData;
-  // Profile({this.userData});
-
   @override
   _ProfileState createState() => _ProfileState();
 }
@@ -28,21 +25,6 @@ class _ProfileState extends State<Profile> {
     print('hello world');
     // getUserDetail();
   }
-
-  // void updateUI(dynamic userData) {
-  //   setState(() {
-  //     if (userData == null) {
-  //       id = 0;
-  //       name = 'Error';
-  //       email = 'Unable to get data';
-  //       return;
-  //     }
-  //     // id = userData['user']['id'];
-  //     // id = id.toInt();
-  //     // name = userData['user']['name'];
-  //     // email = userData['user']['email'];
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -91,21 +73,21 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
                 NameCard(
-                  label: 'Student ID:  $idsTxt',
+                  label: 'Student ID:  idsTxt',
                   icons: Icon(
                     Icons.perm_identity,
                     color: Colors.white,
                   ),
                 ),
                 NameCard(
-                  label: 'Name: $nameTxt',
+                  label: 'Name: nameTxt',
                   icons: Icon(
                     FontAwesomeIcons.child,
                     color: Colors.white,
                   ),
                 ),
                 NameCard(
-                  label: 'Email: $emailTxt',
+                  label: 'Email: emailTxt',
                   icons: Icon(
                     FontAwesomeIcons.voteYea,
                     color: Colors.white,

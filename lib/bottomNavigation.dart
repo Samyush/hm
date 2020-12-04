@@ -16,8 +16,6 @@ class BottomNavigationss extends StatefulWidget {
 }
 
 class _BottomNavigationssState extends State<BottomNavigationss> {
-  // var nowUser = ApiPuller.getUserDetail();
-
   int _currentIndex = 0;
   final _pages = [MyHomePage(), Searches(), Academics(), Calendar(), Profile()];
 
