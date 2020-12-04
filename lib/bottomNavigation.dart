@@ -1,29 +1,36 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hm/screen/academic.dart';
+import 'package:hm/screen/profile.dart';
 import 'package:hm/screen/search.dart';
 
 import 'API/apiDataPuller.dart';
 import 'screen/calendar.dart';
 import 'screen/home_page.dart';
-import 'screen/profile.dart';
 
-class BottomNavigationss extends StatefulWidget {
+class BottomNavigationPage extends StatefulWidget {
   static const String id = 'nav_page';
 
   @override
-  _BottomNavigationssState createState() => _BottomNavigationssState();
+  _BottomNavigationPageState createState() => _BottomNavigationPageState();
 }
 
-class _BottomNavigationssState extends State<BottomNavigationss> {
+class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int _currentIndex = 0;
-  final _pages = [MyHomePage(), Searches(), Academics(), Calendar(), Profile()];
+  final List<Widget> _pages = [
+    MyHomePage(),
+    Searches(),
+    Academics(),
+    Calendar(),
+    // LoadingScreen(),
+    Profile(),
+  ];
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    ApiPuller.getUserDetail();
+    ApiPuller().getUserDetail();
   }
 
   @override

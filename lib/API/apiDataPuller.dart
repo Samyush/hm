@@ -5,11 +5,13 @@ import 'networking.dart';
 class ApiPuller {
   // Profile ui = Profile();
   //kApiCurrentUsr has the api kept in constant file
-  static Future<dynamic> getUserDetail() async {
+  Future<dynamic> getUserDetail() async {
     NetworkHelper networkHelper = NetworkHelper(kApiCurrentUsr);
 
     var userDetail = await networkHelper.getData();
     print(userDetail);
+
+    // Profile(userDetail: userDetail);
 
     return userDetail;
   }

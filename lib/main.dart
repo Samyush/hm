@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         SplashDisplay.id: (context) => SplashDisplay(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
-        BottomNavigationss.id: (context) => BottomNavigationss(),
+        BottomNavigationPage.id: (context) => BottomNavigationPage(),
       },
     );
   }

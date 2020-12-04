@@ -9,7 +9,6 @@ import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';
 
@@ -24,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
-
+  //
   _showMyDialog() async {
     return showDialog<void>(
       context: context,
@@ -80,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
         sharedPreferences.setString("token", jsonResponse['token']);
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
-                builder: (BuildContext context) => BottomNavigationss()),
+                builder: (BuildContext context) => BottomNavigationPage()),
             (Route<dynamic> route) => false);
       }
     } else {
@@ -143,18 +142,27 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 24.0,
               ),
               RoundedButton(
-                onPressed: emailController.text == "" ||
-                        passwordController.text == ""
-                    ? _showMyDialog
-                    : () {
-                        setState(
-                          () {
-                            showSpinner = true;
-                          },
-                        );
-                        signIn(emailController.text, passwordController.text);
-                        // Navigator.pushNamed(context, BottomNavigationss.id);
-                      },
+                onPressed: () {
+                  setState(
+                    () {
+                      showSpinner = true;
+                    },
+                  );
+                  signIn(emailController.text, passwordController.text);
+                  // Navigator.pushNamed(context, BottomNavigationss.id);
+                },
+                // onPressed: emailController.text == "" ||
+                //         passwordController.text == ""
+                //     ? _showMyDialog
+                //     : () {
+                //         setState(
+                //           () {
+                //             showSpinner = true;
+                //           },
+                //         );
+                //         signIn(emailController.text, passwordController.text);
+                //         // Navigator.pushNamed(context, BottomNavigationss.id);
+                //       },
                 title: 'Log In',
                 color: Colors.blueAccent,
               ),

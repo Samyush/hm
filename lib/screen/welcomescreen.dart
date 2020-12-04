@@ -76,7 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               onPressed: () {
-                Navigator.pushNamed(context, BottomNavigationss.id);
+                Navigator.pushNamed(context, BottomNavigationPage.id);
                 // getUserDetails();
               },
               title: 'Help',
