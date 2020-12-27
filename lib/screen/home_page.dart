@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../commonFunction/constants.dart';
 import '../commonFunction/reuse_card.dart';
-import 'sliderImg.dart';
+import '../components/sliderImg.dart';
 
 // double h1 = 65;
 

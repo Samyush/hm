@@ -9,12 +9,12 @@ import 'package:hm/commonFunction/toDelete2.dart';
 
 enum Emoji { happy, veryHappy, sad, verySad }
 
-class Academics extends StatefulWidget {
+class RateMe extends StatefulWidget {
   @override
-  _AcademicsState createState() => _AcademicsState();
+  _RateMeState createState() => _RateMeState();
 }
 
-class _AcademicsState extends State<Academics> {
+class _RateMeState extends State<RateMe> {
   Emoji selectedEmoji;
   int height = 5;
   int weight = 70;

@@ -2,12 +2,13 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hm/bottomNavigation.dart';
 import 'package:hm/commonFunction/constants.dart';
-import 'package:hm/screen/rounded_button.dart';
 import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'file:///C:/FlutterApps/workFrames/hm/lib/components/rounded_button.dart';
+import 'file:///C:/FlutterApps/workFrames/hm/lib/screen/bottomNavigation.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String id = 'login_screen';

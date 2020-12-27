@@ -1,12 +1,12 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:hm/screen/academic.dart';
 import 'package:hm/screen/profile.dart';
+import 'package:hm/screen/rateMe.dart';
 import 'package:hm/screen/search.dart';
 
-import 'API/apiDataPuller.dart';
-import 'screen/calendar.dart';
-import 'screen/home_page.dart';
+import '../API/apiDataPuller.dart';
+import 'calendar/calendar.dart';
+import 'home_page.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   static const String id = 'nav_page';
@@ -20,7 +20,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   final List<Widget> _pages = [
     MyHomePage(),
     Searches(),
-    Academics(),
+    RateMe(),
     Calendar(),
     // LoadingScreen(),
     Profile(),

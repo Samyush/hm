@@ -1,7 +1,8 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
-import 'package:hm/bottomNavigation.dart';
-import 'package:hm/screen/rounded_button.dart';
+
+import 'file:///C:/FlutterApps/workFrames/hm/lib/components/rounded_button.dart';
+import 'file:///C:/FlutterApps/workFrames/hm/lib/screen/bottomNavigation.dart';
 
 import 'login_screen.dart';
 
