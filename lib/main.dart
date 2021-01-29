@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hm/screen/bottomNavigation.dart';
 import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/splashScreen.dart';
 import 'package:hm/screen/welcomescreen.dart';
-
-import 'file:///C:/FlutterApps/workFrames/hm/lib/screen/bottomNavigation.dart';
 
 void main() {
   // initializeDateFormatting().then((_) => runApp(MyApp()));

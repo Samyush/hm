@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hm/commonFunction/commonFunctions.dart';
+import 'package:hm/components/sliderImg.dart';
 import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/welcomescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../commonFunction/constants.dart';
 import '../commonFunction/reuse_card.dart';
-import '../components/sliderImg.dart';
 
 // double h1 = 65;
 
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
 
     //this part of code is to be completed and is for checking if the user is logged in or not but for now, it is commented
-    checkLoginStatus();
+    //checkLoginStatus();
   }
 
   @override
