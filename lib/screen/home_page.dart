@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:hm/commonFunction/commonFunctions.dart';
+import 'package:hm/components/sliderImg.dart';
 import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/welcomescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../constants.dart';
-import '../reuse_card.dart';
-import 'sliderImg.dart';
+import '../commonFunction/constants.dart';
+import '../commonFunction/reuse_card.dart';
 
-enum Gender { male, female }
-
-double h1 = 65;
+// double h1 = 65;
 
 class MyHomePage extends StatefulWidget {
   static const String id = 'home_page';
@@ -22,8 +20,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   SharedPreferences sharedPreferences;
 
-  Future<void> _launched;
-  Gender selectedGender;
+  Future<void> onLaunched;
   String height = 'Photos';
   String _phone = '+977-01-5522909';
 
@@ -32,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // TODO: implement initState
     super.initState();
 
-    //this part of code is to completed
+    //this part of code is to be completed and is for checking if the user is logged in or not but for now, it is commented
     checkLoginStatus();
   }
 
@@ -50,38 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (BuildContext context) => LoginScreen()),
           (Route<dynamic> route) => false);
-    }
-  }
-
-//  for making a phone call
-  Future<void> _makePhoneCall(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-  Future<void> _sendAMail(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-//  for opening links
-
-  Future<void> _launchInWebViewWithJavaScript(String url) async {
-    if (await canLaunch(url)) {
-      await launch(
-        url,
-        forceSafariVC: true,
-        forceWebView: true,
-        enableJavaScript: true,
-      );
-    } else {
-      throw 'Could not launch $url';
     }
   }
 
@@ -128,20 +93,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-
-//
     );
   }
 
   Widget socialMedia() {
-    return ListView(
+    return Column(
       children: [
         Expanded(
           child: Row(
             children: <Widget>[
               Expanded(
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/culinary.png'),
@@ -149,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/drive/folders/1bdEi3N0AT1HKvkV0AEtyaXEA3kjq6Veq?usp=sharing');
                     });
                   },
@@ -159,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/website.png'),
@@ -167,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://culinaryarts.com.np/');
                     });
                   },
@@ -184,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
 
                   cardChild: Center(
                     child: Image(
@@ -193,23 +156,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched =
-                          _sendAMail('mailto: info@culinaryarts.com.np');
+                      onLaunched = CommonFunction.sendAMail(
+                          'mailto: info@culinaryarts.com.np');
                     });
                   },
                   // colour: Color(0xFF838587),
                   colour: Color(0xFFD6D3CA),
-
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.mars,
-//                      label: 'MALE',
-//                    ),
                 ),
               ),
               Expanded(
                 child: ReuseCard(
-                  height: h1,
-
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/call.png'),
@@ -217,14 +174,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _makePhoneCall('tel:$_phone');
+                      onLaunched = CommonFunction.makePhoneCall('tel:$_phone');
                     });
                   },
                   colour: Color(0xFF127538),
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.venus,
-//                      label: 'FEMALE',
-//                    ),
                 ),
               ),
             ],
@@ -235,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Expanded(
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/facebook.png'),
@@ -243,7 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.facebook.com/culinaryarts.nepal/');
                     });
                   },
@@ -253,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/insta.png'),
@@ -261,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.instagram.com/aca.nepal/');
                     });
                   },
@@ -278,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Expanded(
                 flex: 2,
                 child: ReuseCard(
-                  height: h1,
+                  // height: h1,
 
                   cardChild: Center(
                     child: Image(
@@ -287,23 +240,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _launchInWebViewWithJavaScript(
+                      onLaunched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://www.youtube.com/channel/UCHPc2ESR4jv8bWwCW1Rspww');
                     });
                   },
                   // colour: Color(0xFFCDCDCD),
                   colour: Color(0xFFD6D3CA),
-
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.mars,
-//                      label: 'MALE',
-//                    ),
                 ),
               ),
               Expanded(
                 child: ReuseCard(
-                  height: h1,
-
+                  // height: h1,
                   cardChild: Center(
                     child: Image(
                       image: AssetImage('images/twitter.png'),
@@ -311,14 +258,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = _makePhoneCall('tel:$_phone');
+                      onLaunched = CommonFunction.makePhoneCall('tel:$_phone');
                     });
                   },
                   colour: Color(0xFF127538),
-//                    cardChild: IconContent(
-//                      icon: FontAwesomeIcons.venus,
-//                      label: 'FEMALE',
-//                    ),
                 ),
               ),
             ],

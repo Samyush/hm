@@ -1,22 +1,37 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:hm/screen/accademics.dart';
+import 'package:hm/screen/profile.dart';
+import 'package:hm/screen/rateMe.dart';
 import 'package:hm/screen/search.dart';
 
-import 'screen/calendar.dart';
-import 'screen/home_page.dart';
-import 'screen/profile.dart';
+import '../API/apiDataPuller.dart';
+import 'calendar/calendar.dart';
+import 'home_page.dart';
 
-class BottomNavigationss extends StatefulWidget {
+class BottomNavigationPage extends StatefulWidget {
   static const String id = 'nav_page';
 
   @override
-  _BottomNavigationssState createState() => _BottomNavigationssState();
+  _BottomNavigationPageState createState() => _BottomNavigationPageState();
 }
 
-class _BottomNavigationssState extends State<BottomNavigationss> {
+class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int _currentIndex = 0;
-  final _pages = [MyHomePage(), Searches(), Academics(), Calendar(), Profile()];
+  final List<Widget> _pages = [
+    MyHomePage(),
+    Searches(),
+    RateMe(),
+    Calendar(),
+    // LoadingScreen(),
+    Profile(),
+  ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ApiPuller().getUserDetail();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +75,7 @@ class _BottomNavigationssState extends State<BottomNavigationss> {
         onTap: (index) {
           setState(() {
             _currentIndex = index;
-            print(_currentIndex);
+            // print(_currentIndex);
           });
         },
       ),

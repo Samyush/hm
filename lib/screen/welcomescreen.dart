@@ -1,7 +1,8 @@
+import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
-import 'package:hm/bottomNavigation.dart';
-import 'package:hm/screen/rounded_button.dart';
+import 'package:hm/components/rounded_button.dart';
 
+import 'bottomNavigation.dart';
 import 'login_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -75,7 +76,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
             ),
             RoundedButton(
               onPressed: () {
-                Navigator.pushNamed(context, BottomNavigationss.id);
+                Navigator.pushNamed(context, BottomNavigationPage.id);
+                // getUserDetails();
               },
               title: 'Help',
               color: Colors.blueAccent,

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hm/bottomNavigation.dart';
+import 'package:hm/screen/bottomNavigation.dart';
 import 'package:hm/screen/login_screen.dart';
+import 'package:hm/screen/splashScreen.dart';
 import 'package:hm/screen/welcomescreen.dart';
-import 'package:intl/date_symbol_data_local.dart';
-
-import 'screen/splash.dart';
 
 void main() {
-  initializeDateFormatting().then((_) => runApp(MyApp()));
+  // initializeDateFormatting().then((_) => runApp(MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //the following code removes the debugger label
+      debugShowCheckedModeBanner: false,
       title: 'ACA APP',
       theme: ThemeData().copyWith(
 //        primaryColor: Color(0xFF111118),
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         SplashDisplay.id: (context) => SplashDisplay(),
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id: (context) => LoginScreen(),
-        BottomNavigationss.id: (context) => BottomNavigationss(),
+        BottomNavigationPage.id: (context) => BottomNavigationPage(),
       },
     );
   }

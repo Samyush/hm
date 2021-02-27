@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+const kApiCurrentUsr = 'http://10.0.2.2:8000/api/currentUsr';
+const kApiLogin = 'http://10.0.2.2:8000/api/login';
 
 const kBottomContainerHeight = 70.0;
 const kBottomConColor = Color(0xFFEB1555);
-const kActiveColor = Colors.grey;
-const kInactiveColor = Color(0xFF111328);
+const kActiveColor = Color(0xFFD0B823);
+const kInactiveColor = Color(0xFFD6D3CA);
 
 const kTextLabelStyle = TextStyle(
   fontSize: 18,
-  color: Color(0xFF8D8E98),
+  color: Color(0xFFF71F02),
 );
 
 const kNumberTextStyle = TextStyle(
@@ -59,8 +61,9 @@ const kSettingsIcon = Icon(
 
 const kLeadingNav = IconButton(
   icon: Icon(
-    FontAwesomeIcons.heartbeat,
+    Icons.food_bank,
     color: Colors.redAccent,
+    size: 35,
   ),
 );
 
