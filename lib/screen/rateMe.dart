@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hm/API/apiRateMy.dart';
 import 'package:hm/commonFunction/constants.dart';
 import 'package:hm/commonFunction/reuse_card.dart';
 import 'package:hm/commonFunction/roundedIconButton.dart';
@@ -21,6 +22,26 @@ class _RateMeState extends State<RateMe> {
   int age = 20;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // rascal();
+  }
+
+  //Todo:: to change the below code to getAuth user data and update UI
+  void rascal() async {
+    var userData = await MyRating().rateIt();
+
+    return updateUI(
+      userData,
+    );
+  }
+
+  void updateUI(dynamic dataIs) {
+    print(dataIs);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +54,9 @@ class _RateMeState extends State<RateMe> {
               color: Colors.black,
             ),
             tooltip: 'Show Snackbar',
-            onPressed: () {},
+            onPressed: () {
+              MyRating().rateIt();
+            },
           ),
         ],
         backgroundColor: Colors.white,

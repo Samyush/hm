@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kApiCurrentUsr = 'http://10.0.2.2:8000/api/currentUsr';
+const kApiMyRating = 'http://10.0.2.2:8000/api/rateMe';
+
 const kApiLogin = 'http://10.0.2.2:8000/api/login';
 
 const kBottomContainerHeight = 70.0;
