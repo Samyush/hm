@@ -29,4 +29,24 @@ class NetworkHelper {
       print(response.statusCode);
     }
   }
+
+  //posting method to be completed
+  //todo:: posting method to be completed
+  Future postRatings() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    token = sharedPreferences.getString("token");
+
+    http.Response response = await http.get(
+      url,
+      headers: {HttpHeaders.authorizationHeader: "Bearer $token"},
+    );
+
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      return jsonDecode(data);
+    } else {
+      print(response.statusCode);
+    }
+  }
 }
