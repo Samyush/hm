@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 const kApiCurrentUsr = 'http://10.0.2.2:8000/api/currentUsr';
-const kApiLogin = 'http://10.0.2.2:8000/api/login';
+const kApiMyRating = 'http://10.0.2.2:8000/api/rateMe';
+
+final String kApiLogin = "http://10.0.2.2:8000/api/login";
 
 const kBottomContainerHeight = 70.0;
 const kBottomConColor = Color(0xFFEB1555);

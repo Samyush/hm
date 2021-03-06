@@ -29,4 +29,27 @@ class NetworkHelper {
       print(response.statusCode);
     }
   }
+
+  //posting method to be completed
+  //todo:: posting method to be completed
+  Future postRatings(bool happy, int rating) async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    token = sharedPreferences.getString("token");
+
+    Map myRating = {'happy': '1', 'rating': '10'};
+    var jsonResponse;
+    //kApiLogin is in constants.dart
+    // var response = await http.post(kApiLogin, body: data);
+    http.Response response = await http.post(url,
+        headers: {HttpHeaders.authorizationHeader: "Bearer $token"},
+        body: myRating);
+
+    if (response.statusCode == 200) {
+      String data = response.body;
+
+      return jsonDecode(data);
+    } else {
+      print(response.statusCode);
+    }
+  }
 }
