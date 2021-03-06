@@ -4,6 +4,8 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:hm/screen/welcomescreen.dart';
 
+bool isLoggedIn = true;
+
 class SplashDisplay extends StatefulWidget {
   final Color backgroundColor;
   final dynamic onClick;
