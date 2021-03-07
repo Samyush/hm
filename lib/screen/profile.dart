@@ -18,6 +18,9 @@ class _ProfileState extends State<Profile> {
   int idTxt;
   String nameTxt;
   String emailTxt;
+  String yearTxt;
+  String happy;
+  String ratingTxt;
   bool showSpinner = false;
 
   @override
@@ -43,12 +46,21 @@ class _ProfileState extends State<Profile> {
         idTxt = 0;
         nameTxt = 'Error';
         emailTxt = 'Error';
+        yearTxt = 'Error';
+        ratingTxt = 'Error';
+        happy = 'Error';
         showSpinner = true;
         return;
       }
       idTxt = dataIs['user']['id'];
       nameTxt = dataIs['user']['name'];
       emailTxt = dataIs['user']['email'];
+      yearTxt = dataIs['user']['year_id'].toString();
+      ratingTxt = dataIs['user']['rating'].toString();
+      if (dataIs['user']['happy'] == '1')
+        happy = 'yes';
+      else
+        happy = 'No';
       showSpinner = false;
     });
   }
@@ -119,6 +131,27 @@ class _ProfileState extends State<Profile> {
                     label: 'Email: $emailTxt',
                     icons: Icon(
                       FontAwesomeIcons.voteYea,
+                      color: Colors.white,
+                    ),
+                  ),
+                  NameCard(
+                    label: 'Year: $yearTxt',
+                    icons: Icon(
+                      FontAwesomeIcons.yahoo,
+                      color: Colors.white,
+                    ),
+                  ),
+                  NameCard(
+                    label: 'My Rating: $ratingTxt',
+                    icons: Icon(
+                      FontAwesomeIcons.acquisitionsIncorporated,
+                      color: Colors.white,
+                    ),
+                  ),
+                  NameCard(
+                    label: 'Happy?: $happy',
+                    icons: Icon(
+                      FontAwesomeIcons.smile,
                       color: Colors.white,
                     ),
                   ),
