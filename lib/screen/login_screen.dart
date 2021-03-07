@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: () {
                 setState(() {
@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 });
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('OK'),
               onPressed: () {
                 setState(() {
