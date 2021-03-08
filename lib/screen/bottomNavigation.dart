@@ -1,10 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:hm/networking/serverConnection/apiDataPuller.dart';
 import 'package:hm/screen/profile.dart';
 import 'package:hm/screen/rateMe.dart';
 import 'package:hm/screen/search.dart';
-
-import 'file:///C:/FlutterApps/FYP/hm/lib/networking/serverConnection/apiDataPuller.dart';
 
 import 'calendar/calendar.dart';
 import 'home_page.dart';
