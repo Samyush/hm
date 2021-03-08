@@ -58,7 +58,7 @@ class _ProfileState extends State<Profile> {
       emailTxt = dataIs['user']['email'];
       yearTxt = dataIs['user']['year_id'].toString();
       ratingTxt = dataIs['user']['rating'].toString();
-      if (dataIs['user']['happy'] == '1')
+      if (dataIs['user']['happy'].toString() == '1')
         happy = 'yes';
       else
         happy = 'No';
