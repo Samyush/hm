@@ -1,6 +1,6 @@
 import 'package:hm/commonFunction/constants.dart';
 
-import 'networking.dart';
+import 'mainConnector.dart';
 
 class MyRating {
   Future<dynamic> rateIt() async {

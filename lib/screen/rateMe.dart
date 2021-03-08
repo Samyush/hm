@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hm/API/apiRateMy.dart';
 import 'package:hm/commonFunction/constants.dart';
 import 'package:hm/commonFunction/reuse_card.dart';
 import 'package:hm/commonFunction/roundedIconButton.dart';
 import 'package:hm/commonFunction/toDelete2.dart';
+
+import 'file:///C:/FlutterApps/FYP/hm/lib/networking/serverConnection/apiRateMy.dart';
 
 //will add emoji my clg and rating feature here
 
