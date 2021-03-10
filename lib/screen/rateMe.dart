@@ -4,7 +4,7 @@ import 'package:hm/commonFunction/constants.dart';
 import 'package:hm/commonFunction/reuse_card.dart';
 import 'package:hm/commonFunction/roundedIconButton.dart';
 import 'package:hm/commonFunction/toDelete2.dart';
-import 'package:hm/networking/serverConnection/apiRateMy.dart';
+import 'package:hm/networking/serverConnection/apiRateMyCollege.dart';
 
 //will add emoji my clg and rating feature here
 
@@ -17,9 +17,10 @@ class RateMe extends StatefulWidget {
 
 class _RateMeState extends State<RateMe> {
   Emoji selectedEmoji;
-  int height = 5;
-  int weight = 70;
-  int age = 20;
+  int happy = 1;
+  int ratingSlider = 5;
+  int collegeInfrastructure = 10;
+  int educationQuality = 10;
 
   @override
   void initState() {
@@ -30,7 +31,7 @@ class _RateMeState extends State<RateMe> {
 
   //Todo:: to change the below code to getAuth user data and update UI
   void rascal() async {
-    var userData = await MyRating().rateIt();
+    var userData = await MyRating().rateIt(happy, ratingSlider);
 
     return updateUI(
       userData,
@@ -55,7 +56,7 @@ class _RateMeState extends State<RateMe> {
             ),
             tooltip: 'Show Snackbar',
             onPressed: () {
-              MyRating().rateIt();
+              MyRating().rateIt(happy, ratingSlider);
             },
           ),
         ],
@@ -72,6 +73,7 @@ class _RateMeState extends State<RateMe> {
                     onTap: () {
                       setState(() {
                         selectedEmoji = Emoji.sad;
+                        happy = 1;
                       });
                     },
                     colour: selectedEmoji == Emoji.sad
@@ -88,6 +90,7 @@ class _RateMeState extends State<RateMe> {
                     onTap: () {
                       setState(() {
                         selectedEmoji = Emoji.happy;
+                        happy = 0;
                       });
                     },
                     colour: selectedEmoji == Emoji.happy
@@ -122,7 +125,7 @@ class _RateMeState extends State<RateMe> {
                           //style: kTextLabelStyle,
                           ),
                       Text(
-                        height.toString(),
+                        ratingSlider.toString(),
                         style: kNumberTextStyle,
                       ),
                       Icon(FontAwesomeIcons.star
@@ -141,14 +144,14 @@ class _RateMeState extends State<RateMe> {
                         overlayShape:
                             RoundSliderOverlayShape(overlayRadius: 30)),
                     child: Slider(
-                      value: height.toDouble(),
+                      value: ratingSlider.toDouble(),
                       min: 0.0,
                       max: 10.0,
 //                      activeColor: Color(0xFFEB1555),
 //                      inactiveColor: Color(0xFF8D8E98),
                       onChanged: (double newValue) {
                         setState(() {
-                          height = newValue.toInt();
+                          ratingSlider = newValue.toInt();
                         });
                         print(newValue);
                       },
@@ -172,7 +175,7 @@ class _RateMeState extends State<RateMe> {
                           style: kTextLabelStyle,
                         ),
                         Text(
-                          weight.toString(),
+                          collegeInfrastructure.toString(),
                           style: kNumberTextStyle,
                         ),
                         Row(
@@ -181,9 +184,10 @@ class _RateMeState extends State<RateMe> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.thumbsDown,
                               onPressed: () {
-                                setState(() {
-                                  weight--;
-                                });
+                                if (collegeInfrastructure >= 0)
+                                  setState(() {
+                                    collegeInfrastructure--;
+                                  });
                               },
                             ),
                             SizedBox(
@@ -196,9 +200,10 @@ class _RateMeState extends State<RateMe> {
                                 color: Colors.white,
                               ),
                               onPressed: () {
-                                setState(() {
-                                  weight++;
-                                });
+                                if (collegeInfrastructure < 10)
+                                  setState(() {
+                                    collegeInfrastructure++;
+                                  });
                               },
                             ),
                           ],
@@ -218,7 +223,7 @@ class _RateMeState extends State<RateMe> {
                           style: kTextLabelStyle,
                         ),
                         Text(
-                          age.toString(),
+                          educationQuality.toString(),
                           style: kNumberTextStyle,
                         ),
                         Row(
@@ -227,9 +232,10 @@ class _RateMeState extends State<RateMe> {
                             RoundIconButton(
                               icon: FontAwesomeIcons.thumbsDown,
                               onPressed: () {
-                                setState(() {
-                                  age--;
-                                });
+                                if (educationQuality >= 0)
+                                  setState(() {
+                                    educationQuality--;
+                                  });
                               },
                             ),
                             SizedBox(
@@ -242,9 +248,10 @@ class _RateMeState extends State<RateMe> {
                                 color: Colors.white,
                               ),
                               onPressed: () {
-                                setState(() {
-                                  age++;
-                                });
+                                if (educationQuality < 10)
+                                  setState(() {
+                                    educationQuality++;
+                                  });
                               },
                             ),
                           ],
