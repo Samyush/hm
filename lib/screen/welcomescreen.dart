@@ -79,7 +79,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 Navigator.pushNamed(context, BottomNavigationPage.id);
                 // getUserDetails();
               },
-              title: 'Help',
+              title: 'Already Logged In',
               color: Colors.blueAccent,
             ),
           ],

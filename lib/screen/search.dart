@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
-
+import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:hm/commonFunction/commonFunctions.dart';
 
 import '../commonFunction/constants.dart';
@@ -33,7 +32,7 @@ class _SearchesState extends State<Searches> {
             ),
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: () {
                 setState(() {
@@ -41,11 +40,12 @@ class _SearchesState extends State<Searches> {
                 });
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('Proceed'),
               onPressed: () {
                 setState(() {
-//                  FlutterOpenWhatsapp.sendSingleMessage("+977 9860810828", "");
+                  FlutterOpenWhatsapp.sendSingleMessage(
+                      "+977 9860810828", "Hello,");
                 });
               },
             ),
@@ -298,7 +298,7 @@ class _SearchesState extends State<Searches> {
                   onTap: () {
                     setState(() {
                       _launched = CommonFunction.launchInWebViewWithJavaScript(
-                          'https://www.facebook.com/samyush.maharjan');
+                          'https://github.com/Samyush');
                     });
                   },
                 ),
