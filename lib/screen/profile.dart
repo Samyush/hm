@@ -29,7 +29,7 @@ class _ProfileState extends State<Profile> {
     super.initState();
     getUserData();
     // updateUI(widget.userData);
-    print('hello world');
+    print('profile page');
   }
 
   void getUserData() async {

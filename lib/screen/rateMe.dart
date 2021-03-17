@@ -32,6 +32,29 @@ class _RateMeState extends State<RateMe> {
   //Todo:: to change the below code to getAuth user data and update UI
   void rascal() async {
     var userData = await MyRating().rateIt(happy, ratingSlider);
+    if (userData != null) {
+      final snackBar = SnackBar(
+        content: Text('Rated Successfully, Thank you!'),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () {
+            // Some code to undo the change.
+          },
+        ),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    } else {
+      final snackBar = SnackBar(
+        content: Text('Sorry, please try again!'),
+        action: SnackBarAction(
+          label: 'Undo',
+          onPressed: () {
+            // Some code to undo the change.
+          },
+        ),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
 
     return updateUI(
       userData,
@@ -56,7 +79,8 @@ class _RateMeState extends State<RateMe> {
             ),
             tooltip: 'Show Snackbar',
             onPressed: () {
-              MyRating().rateIt(happy, ratingSlider);
+              rascal();
+              // MyRating().rateIt(happy, ratingSlider);
             },
           ),
         ],
