@@ -6,6 +6,8 @@ import 'package:hm/commonFunction/roundedIconButton.dart';
 import 'package:hm/commonFunction/toDelete2.dart';
 import 'package:hm/networking/serverConnection/apiRateMyCollege.dart';
 
+import '../networking/serverConnection/UserDataPuller.dart';
+
 //will add emoji my clg and rating feature here
 
 enum Emoji { happy, veryHappy, sad, verySad }
@@ -26,17 +28,43 @@ class _RateMeState extends State<RateMe> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    getUserData();
     // rascal();
   }
 
-  //Todo:: to change the below code to getAuth user data and update UI
-  void rascal() async {
+  void getUserData() async {
+    var userData = await ApiPuller().getUserDetail();
+
+    return updateUI(
+      userData,
+    );
+  }
+
+  //this method here makes the change in UI as the users rating
+  void updateUI(dynamic dataIs) {
+    print(dataIs);
+    setState(() {
+      ratingSlider = dataIs['user']['rating'];
+
+      if (dataIs['user']['happy'].toString() == '1') {
+        happy = 1;
+        selectedEmoji = Emoji.sad;
+      } else if (dataIs['user']['happy'].toString() == '0') {
+        happy = 0;
+        selectedEmoji = Emoji.happy;
+      }
+    });
+    // ratingSlider =
+  }
+
+  //The following method is used for rating data
+  void toRate() async {
     var userData = await MyRating().rateIt(happy, ratingSlider);
     if (userData != null) {
       final snackBar = SnackBar(
         content: Text('Rated Successfully, Thank you!'),
         action: SnackBarAction(
-          label: 'Undo',
+          label: 'Done',
           onPressed: () {
             // Some code to undo the change.
           },
@@ -55,14 +83,6 @@ class _RateMeState extends State<RateMe> {
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
-
-    return updateUI(
-      userData,
-    );
-  }
-
-  void updateUI(dynamic dataIs) {
-    print(dataIs);
   }
 
   @override
@@ -79,7 +99,7 @@ class _RateMeState extends State<RateMe> {
             ),
             tooltip: 'Show Snackbar',
             onPressed: () {
-              rascal();
+              toRate();
               // MyRating().rateIt(happy, ratingSlider);
             },
           ),

@@ -21,7 +21,7 @@ class _ProfileState extends State<Profile> {
   String yearTxt;
   String happy;
   String ratingTxt;
-  bool showSpinner = false;
+  bool showSpinner = true;
 
   @override
   void initState() {
