@@ -4,6 +4,8 @@ import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/splashScreen.dart';
 import 'package:hm/screen/welcomescreen.dart';
 
+//need to change all possible file naming formats
+
 void main() {
   // initializeDateFormatting().then((_) => runApp(MyApp()));
   runApp(MyApp());
