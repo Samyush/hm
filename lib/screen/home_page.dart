@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hm/commonFunction/commonFunctions.dart';
-import 'package:hm/components/sliderImg.dart';
+import 'package:hm/componentBuilders/sliderImg.dart';
+import 'package:hm/reuseCodeFunction/commonFunctions.dart';
 import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/welcomescreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../commonFunction/constants.dart';
-import '../commonFunction/reuse_card.dart';
+import '../componentBuilders/reuseCardBuilder.dart';
+import '../reuseCodeFunction/constants.dart';
 
 // double h1 = 65;
 

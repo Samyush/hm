@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../commonFunction/constants.dart';
-import '../../commonFunction/reuse_card.dart';
+import '../../componentBuilders/reuseCardBuilder.dart';
+import '../../reuseCodeFunction/constants.dart';
 import 'calendarWork.dart';
 
 class Calendar extends StatelessWidget {

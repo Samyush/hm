@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hm/commonFunction/constants.dart';
-import 'package:hm/commonFunction/reuse_card.dart';
-import 'package:hm/commonFunction/roundedIconButton.dart';
-import 'package:hm/commonFunction/toDelete2.dart';
-import 'package:hm/networking/serverConnection/apiRateMyCollege.dart';
+import 'package:hm/componentBuilders/reuseCardBuilder.dart';
+import 'package:hm/componentBuilders/roundedIconButton.dart';
+import 'package:hm/networking/serverConnection/perUserDemand/apiRateMyCollege.dart';
+import 'package:hm/reuseCodeFunction/constants.dart';
+import 'package:hm/reuseCodeFunction/iconContent.dart';
 
-import '../networking/serverConnection/UserDataPuller.dart';
+import '../networking/serverConnection/perUserDemand/UserDataPuller.dart';
 
 //will add emoji my clg and rating feature here
 

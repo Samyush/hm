@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
-import 'package:hm/commonFunction/commonFunctions.dart';
+import 'package:hm/reuseCodeFunction/commonFunctions.dart';
 
-import '../commonFunction/constants.dart';
-import '../commonFunction/reuse_card.dart';
+import '../componentBuilders/reuseCardBuilder.dart';
+import '../reuseCodeFunction/constants.dart';
 
 class Searches extends StatefulWidget {
   static const String id = 'second_page';

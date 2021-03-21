@@ -61,11 +61,11 @@ class CommonFunction {
             ),
           ),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: onPressed,
             ),
-            FlatButton(
+            TextButton(
               child: Text('Proceed'),
               onPressed: onPressed,
             ),
