@@ -59,8 +59,10 @@ class _ProfileState extends State<Profile> {
       ratingTxt = dataIs['user']['rating'].toString();
       if (dataIs['user']['happy'].toString() == '1')
         happy = 'yes';
+      else if (dataIs['user']['happy'].toString() == '0')
+        happy = 'Not Happy';
       else
-        happy = 'No';
+        happy = 'Not Updated';
       showSpinner = false;
     });
   }
