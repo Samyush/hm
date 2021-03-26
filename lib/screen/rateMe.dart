@@ -44,14 +44,19 @@ class _RateMeState extends State<RateMe> {
   void updateUI(dynamic dataIs) {
     print(dataIs);
     setState(() {
-      ratingSlider = dataIs['user']['rating'];
-
-      if (dataIs['user']['happy'].toString() == '1') {
-        happy = 1;
-        selectedEmoji = Emoji.sad;
-      } else if (dataIs['user']['happy'].toString() == '0') {
-        happy = 0;
-        selectedEmoji = Emoji.happy;
+      try {
+        if (dataIs['user']['happy'].toString() == '1' &&
+            dataIs['user']['rating'] != null) {
+          happy = 1;
+          selectedEmoji = Emoji.sad;
+          ratingSlider = dataIs['user']['rating'];
+        } else if (dataIs['user']['happy'].toString() == '0') {
+          happy = 0;
+          selectedEmoji = Emoji.happy;
+        }
+      } catch (e) {
+        ratingSlider = 5;
+        print('to be rated');
       }
     });
     // ratingSlider =
