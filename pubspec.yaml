@@ -28,7 +28,8 @@ dependencies:
   carousel_slider: ^2.1.0
 #  flutter_spinkit: ^4.1.2+1
   flutter_open_whatsapp: ^0.1.2
-
+  line_awesome_flutter: ^1.0.1
+  flutter_screenutil: ^1.0.2
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const kPrimaryColor = Color(0xFF158A85);
+
 const kBottomContainerHeight = 70.0;
 const kBottomConColor = Color(0xFFEB1555);
 const kActiveColor = Color(0xFFD0B823);
