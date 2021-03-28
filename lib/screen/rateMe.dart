@@ -26,7 +26,6 @@ class _RateMeState extends State<RateMe> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getUserData();
     // rascal();

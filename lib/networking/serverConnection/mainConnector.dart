@@ -31,13 +31,12 @@ class NetworkHelper {
   }
 
   //posting method to be completed
-  //todo:: posting method to be completed
   Future postRatings(int happy, int rating) async {
     sharedPreferences = await SharedPreferences.getInstance();
     token = sharedPreferences.getString("token");
 
     Map myRating = {'happy': happy.toString(), 'rating': rating.toString()};
-    var jsonResponse;
+    // var jsonResponse;
     //kApiLogin is in constants.dart
     // var response = await http.post(kApiLogin, body: data);
     http.Response response = await http.post(url,

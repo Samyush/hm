@@ -28,7 +28,6 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     ApiPuller().getUserDetail();
   }
