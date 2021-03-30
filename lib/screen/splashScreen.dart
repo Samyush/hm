@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:core';
 
 import 'package:flutter/material.dart';
-import 'package:hm/screen/welcomescreen.dart';
+import 'package:hm/screen/welcomeScreen.dart';
 
 bool isLoggedIn = true;
 

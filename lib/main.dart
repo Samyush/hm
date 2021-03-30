@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hm/screen/bottomNavigation.dart';
 import 'package:hm/screen/login_screen.dart';
 import 'package:hm/screen/splashScreen.dart';
-import 'package:hm/screen/welcomescreen.dart';
+import 'package:hm/screen/welcomeScreen.dart';
 
 //need to change all possible file naming formats
 
