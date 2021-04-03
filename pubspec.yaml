@@ -30,6 +30,7 @@ dependencies:
   flutter_open_whatsapp: ^0.1.2
   line_awesome_flutter: ^1.0.1
   flutter_screenutil: ^1.0.2
+  connectivity: ^3.0.3
 
 dev_dependencies:
   flutter_test:
