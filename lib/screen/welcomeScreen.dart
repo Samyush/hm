@@ -56,7 +56,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Image.asset(
-                  'images/clogo.png',
+                  'images/cLogo.png',
                   // width: MediaQuery.of(context).size.width,
                 ),
                 height: 100.0,

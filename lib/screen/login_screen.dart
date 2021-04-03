@@ -171,7 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Container(
                             width: MediaQuery.of(context).size.width,
                             height: 200.0,
-                            child: Image.asset('images/clogo.png'),
+                            child: Image.asset('images/cLogo.png'),
                           )),
                     ),
                     SizedBox(
@@ -211,7 +211,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         );
                         signIn(emailController.text, passwordController.text);
-                        // Navigator.pushNamed(context, BottomNavigationss.id);
                       },
                       // onPressed: emailController.text == "" ||
                       //         passwordController.text == ""
@@ -223,7 +222,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       //           },
                       //         );
                       //         signIn(emailController.text, passwordController.text);
-                      //         // Navigator.pushNamed(context, BottomNavigationss.id);
                       //       },
                       title: 'Log In',
                       color: Colors.blueAccent,
