@@ -64,6 +64,7 @@ const kLeadingNav = IconButton(
     color: Colors.redAccent,
     size: 35,
   ),
+  onPressed: null,
 );
 
 const kAppbarTitle = Text(

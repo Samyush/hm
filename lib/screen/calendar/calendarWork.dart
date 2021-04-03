@@ -79,7 +79,7 @@ class _CalendarWorkState extends State<CalendarWork>
         children: <Widget>[
           // Switch out 2 lines below to play with TableCalendar's settings
           //-----------------------
-          _buildTableCalendar(),
+          buildTableCalendar(),
           // _buildTableCalendarWithBuilders(),
           const SizedBox(height: 8.0),
           // _buildButtons(),
@@ -91,7 +91,7 @@ class _CalendarWorkState extends State<CalendarWork>
   }
 
   // Simple TableCalendar configuration (using Styles)
-  Widget _buildTableCalendar() {
+  Widget buildTableCalendar() {
     return TableCalendar(
       calendarController: _calendarController,
       events: _events,
@@ -118,7 +118,7 @@ class _CalendarWorkState extends State<CalendarWork>
   }
 
   // More advanced TableCalendar configuration (using Builders & Styles)
-  Widget _buildTableCalendarWithBuilders() {
+  Widget buildTableCalendarWithBuilders() {
     return TableCalendar(
       locale: 'pl_PL',
       calendarController: _calendarController,
@@ -242,8 +242,8 @@ class _CalendarWorkState extends State<CalendarWork>
     );
   }
 
-  Widget _buildButtons() {
-    final dateTime = _events.keys.elementAt(_events.length - 2);
+  Widget buildButtons() {
+    // final dateTime = _events.keys.elementAt(_events.length - 2);
 
     return Column(
       children: <Widget>[
@@ -251,7 +251,7 @@ class _CalendarWorkState extends State<CalendarWork>
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            RaisedButton(
+            TextButton(
               child: Text('Month'),
               onPressed: () {
                 setState(() {
@@ -259,7 +259,7 @@ class _CalendarWorkState extends State<CalendarWork>
                 });
               },
             ),
-            RaisedButton(
+            TextButton(
               child: Text('2 weeks'),
               onPressed: () {
                 setState(() {
@@ -268,7 +268,7 @@ class _CalendarWorkState extends State<CalendarWork>
                 });
               },
             ),
-            RaisedButton(
+            TextButton(
               child: Text('Week'),
               onPressed: () {
                 setState(() {
