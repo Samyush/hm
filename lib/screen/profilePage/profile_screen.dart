@@ -86,25 +86,25 @@ class _ProfilePageState extends State<ProfilePage> {
                 CircleAvatar(
                     radius: 80.0,
                     backgroundImage: AssetImage("images/culinary.png")),
-                Positioned(
-                  right: 20.0,
-                  bottom: 20.0,
-                  child: InkWell(
-                    onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        builder: ((builder) => null
-                            // SignUpFormState().bottomSheet()
-                            ),
-                      );
-                    },
-                    // child: Icon(
-                    //   Icons.camera_alt,
-                    //   color: kPrimaryColor,
-                    //   size: 28.0,
-                    // ),
-                  ),
-                )
+                // Positioned(
+                //   right: 20.0,
+                //   bottom: 20.0,
+                // child: InkWell(
+                //   onTap: () {
+                //     showModalBottomSheet(
+                //       context: context,
+                //       builder: ((builder) => null
+                //           // SignUpFormState().bottomSheet()
+                //           ),
+                //     );
+                //   },
+                //   // child: Icon(
+                //   //   Icons.camera_alt,
+                //   //   color: kPrimaryColor,
+                //   //   size: 28.0,
+                //   // ),
+                // ),
+                // )
               ],
             ),
           ),
