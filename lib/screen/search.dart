@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_open_whatsapp/flutter_open_whatsapp.dart';
 import 'package:hm/reuseCodeFunction/commonFunctions.dart';
@@ -13,21 +14,20 @@ class Searches extends StatefulWidget {
 }
 
 class _SearchesState extends State<Searches> {
-  Future<void> _launched;
+  Future<void> launched;
 
   Future<void> _showMyDialog() async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
-        return AlertDialog(
+        return CupertinoAlertDialog(
           title: Text('SCHOOL APPS'),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
                 Text(
-                    'For this to run you need Whats app pre-installed on your device.'),
-                Text('Would you like to proceed?'),
+                    'For this to run you need Whats app pre-installed on your device. Else no Action is Performed'),
               ],
             ),
           ),
@@ -73,7 +73,7 @@ class _SearchesState extends State<Searches> {
                   height: 110,
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/drive/folders/1CSxfGzFu4tyeNFdf2Wy0ili4lKLz3-Vq?usp=sharing');
                     });
                   },
@@ -102,7 +102,7 @@ class _SearchesState extends State<Searches> {
                   height: 130,
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/open?id=1dX66k6YPlV_YfjRXyxZU2VJQY4pf-w9R');
                     });
                   },
@@ -131,7 +131,7 @@ class _SearchesState extends State<Searches> {
                   height: 150,
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/open?id=1l8aER69j9PFWNGxeiDDgwLVJlQTnzCE4');
                     });
                   },
@@ -195,7 +195,7 @@ class _SearchesState extends State<Searches> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://drive.google.com/open?id=1hkvasLoFOSZKiN4KvZtRBDauAPpEimyg');
                     });
                   },
@@ -263,7 +263,7 @@ class _SearchesState extends State<Searches> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.sendAMail(
+                      launched = CommonFunction.sendAMail(
                           'mailto: samyushmaharjan@outlook.com');
                     });
                   },
@@ -297,7 +297,7 @@ class _SearchesState extends State<Searches> {
                   ),
                   onTap: () {
                     setState(() {
-                      _launched = CommonFunction.launchInWebViewWithJavaScript(
+                      launched = CommonFunction.launchInWebViewWithJavaScript(
                           'https://github.com/Samyush');
                     });
                   },

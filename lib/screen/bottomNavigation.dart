@@ -1,4 +1,5 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hm/networking/serverConnection/perUserDemand/UserDataPuller.dart';
 import 'package:hm/screen/profilePage/profile_screen.dart';
@@ -37,33 +38,33 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
 //        color: Colors.grey,
-        backgroundColor: Colors.white,
-        buttonBackgroundColor: Color(0xFFC7C7C7),
+        backgroundColor: Color(0xFFC7C7C7),
+        buttonBackgroundColor: Colors.white,
         height: 55,
-//        backgroundColor: Colors.black,
+        // backgroundColor: Colors.black,
         items: <Widget>[
           Icon(
-            Icons.home,
+            CupertinoIcons.house_fill,
             size: 20,
             color: Colors.black,
           ),
           Icon(
-            Icons.search,
-            size: 20,
+            CupertinoIcons.rectangle_3_offgrid_fill,
+            size: 25,
             color: Colors.black,
           ),
           Icon(
-            Icons.school,
-            size: 20,
+            CupertinoIcons.helm,
+            size: 35,
             color: Colors.black,
           ),
           Icon(
-            Icons.calendar_today,
-            size: 20,
+            CupertinoIcons.calendar_today,
+            size: 25,
             color: Colors.black,
           ),
           Icon(
-            Icons.person,
+            CupertinoIcons.person_alt_circle,
             size: 20,
             color: Colors.black,
           ),

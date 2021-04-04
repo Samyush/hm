@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hm/componentBuilders/rounded_button.dart';
 import 'package:hm/networking/allAPI/allAPI.dart';
 import 'package:hm/reuseCodeFunction/constants.dart';
@@ -80,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  _showMyDialog() async {
+  _showMyDialog(String label1, label2) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -90,8 +91,8 @@ class _LoginScreenState extends State<LoginScreen> {
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
-                Text('Looks like there\'s an error.'),
-                Text('Try again with correct credentials'),
+                Text(label1),
+                Text(label2),
               ],
             ),
           ),
@@ -141,7 +142,8 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
       setState(() {
         showSpinner = false;
-        _showMyDialog();
+        _showMyDialog('Looks like there\'s an error.',
+            'Try again with correct credentials');
       });
       print(response.body);
     }
@@ -153,10 +155,23 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       body: _connectionStatusNegative
           ? Center(
-              child: Text(
-              'Check Network Status',
-              style: TextStyle(color: Colors.red, fontSize: 20),
-            ))
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Check Network Status',
+                    style: TextStyle(color: Colors.red[900], fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SpinKitWave(
+                    color: Colors.red,
+                    size: 50.0,
+                  ),
+                ],
+              ),
+            )
           : ModalProgressHUD(
               inAsyncCall: showSpinner,
               child: Padding(
