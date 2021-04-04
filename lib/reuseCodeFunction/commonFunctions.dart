@@ -41,39 +41,6 @@ class CommonFunction {
       throw 'Could not launch $url';
     }
   }
-
-//  the under function is for alert box
-  Future<void> showMyDialog() async {
-    return showDialog<void>(
-      // context: contexter,
-      // context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('SCHOOL APPS'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text(
-                    'For this to run you need Whats app pre-installed on your device.'),
-                Text('Would you like to proceed?'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text('Cancel'),
-              onPressed: onPressed,
-            ),
-            TextButton(
-              child: Text('Proceed'),
-              onPressed: onPressed,
-            ),
-          ],
-        );
-      },
-    );
-  }
 }
 
 class NameCard extends StatelessWidget {

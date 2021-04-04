@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xFF158A85);
 
-const kBottomContainerHeight = 70.0;
-const kBottomConColor = Color(0xFFEB1555);
 const kActiveColor = Color(0xFFD0B823);
 const kInactiveColor = Color(0xFFD6D3CA);
 
@@ -15,29 +13,6 @@ const kTextLabelStyle = TextStyle(
 const kNumberTextStyle = TextStyle(
   fontSize: 50.0,
   fontWeight: FontWeight.w900,
-);
-
-const kLargeTextStyle = TextStyle(
-  fontSize: 25,
-//  color: Color(0xFF8D8E98),
-  fontWeight: FontWeight.bold,
-);
-
-const kTitleTxt = TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
-
-const kResultTxt = TextStyle(
-  fontWeight: FontWeight.bold,
-  fontSize: 22,
-  color: Color(0xFF24D876),
-);
-
-const kBMItxt = TextStyle(
-  fontSize: 100,
-  fontWeight: FontWeight.bold,
-);
-
-const kReview = TextStyle(
-  fontSize: 22,
 );
 
 const kTextAppBarStyle = TextStyle(
@@ -52,12 +27,6 @@ const kNavigationIcon = Icon(
   size: 35,
 );
 
-const kSettingsIcon = Icon(
-  Icons.settings,
-  color: Colors.black,
-  size: 30,
-);
-
 const kLeadingNav = IconButton(
   icon: Icon(
     Icons.food_bank,
@@ -70,24 +39,6 @@ const kLeadingNav = IconButton(
 const kAppbarTitle = Text(
   'Academy of Culinary Arts',
   style: kTextAppBarStyle,
-);
-
-const kSendButtonTextStyle = TextStyle(
-  color: Colors.lightBlueAccent,
-  fontWeight: FontWeight.bold,
-  fontSize: 18.0,
-);
-
-const kMessageTextFieldDecoration = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  hintText: 'Type your message here...',
-  border: InputBorder.none,
-);
-
-const kMessageContainerDecoration = BoxDecoration(
-  border: Border(
-    top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
-  ),
 );
 
 const kTextFieldDecoration = InputDecoration(

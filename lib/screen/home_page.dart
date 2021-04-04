@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: 'Show Snackbar',
             onPressed: () {
               sharedPreferences.clear();
-              sharedPreferences.commit();
+              sharedPreferences.remove('token');
               Navigator.of(context).pushAndRemoveUntil(
                   MaterialPageRoute(
                       builder: (BuildContext context) => WelcomeScreen()),
@@ -233,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   cardChild: Center(
                     child: Image(
-                      image: AssetImage('images/utube.png'),
+                      image: AssetImage('images/youtube.png'),
                     ),
                   ),
                   onTap: () {
