@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hm/componentBuilders/sliderImg.dart';
 import 'package:hm/reuseCodeFunction/commonFunctions.dart';
@@ -48,6 +49,50 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  _showMyDialog(String label1, label2) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text('SCHOOL APPS'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(label1),
+                Text(label2),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                setState(() {
+                  Navigator.pop(context);
+                });
+              },
+            ),
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                sharedPreferences.clear();
+                sharedPreferences.remove('token');
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => WelcomeScreen()),
+                    (Route<dynamic> route) => false);
+                // setState(() {
+                //   Navigator.pop(context);
+                // });
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,12 +106,13 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: kNavigationIcon,
             tooltip: 'Show Snackbar',
             onPressed: () {
-              sharedPreferences.clear();
-              sharedPreferences.remove('token');
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(
-                      builder: (BuildContext context) => WelcomeScreen()),
-                  (Route<dynamic> route) => false);
+              _showMyDialog('Logout?', 'Sure to Logout');
+              // sharedPreferences.clear();
+              // sharedPreferences.remove('token');
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(
+              //         builder: (BuildContext context) => WelcomeScreen()),
+              //     (Route<dynamic> route) => false);
 //        scaffoldKey.currentState.showSnackBar(snackBar);
 //               Navigator.pushNamed(context, ChatScreen.id);
             },
