@@ -98,6 +98,7 @@ class _RateMeState extends State<RateMe> {
         } else if (dataIs['user']['happy'].toString() == '0') {
           happy = 0;
           selectedEmoji = Emoji.happy;
+          ratingSlider = dataIs['user']['rating'];
         }
       } catch (e) {
         ratingSlider = 5;
