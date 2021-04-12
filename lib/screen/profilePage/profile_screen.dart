@@ -63,9 +63,9 @@ class _ProfilePageState extends State<ProfilePage> {
       emailTxt = dataIs['user']['email'];
       yearTxt = dataIs['user']['year_id'].toString();
       ratingTxt = dataIs['user']['rating'].toString();
-      if (dataIs['user']['happy'].toString() == '1')
+      if (dataIs['user']['happy'] == true)
         happy = 'yes';
-      else if (dataIs['user']['happy'].toString() == '0')
+      else if (dataIs['user']['happy'] == false)
         happy = 'Not Happy';
       else
         happy = 'Not Updated';
@@ -129,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             child: Center(
               child: Text(
-                'Verified',
+                'Year: ' + '$yearTxt',
                 style: kButtonTextStyle,
               ),
             ),

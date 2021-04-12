@@ -22,8 +22,8 @@ class RateMe extends StatefulWidget {
 
 class _RateMeState extends State<RateMe> {
   Emoji selectedEmoji;
-  int happy = 1;
-  int ratingSlider = 0;
+  int happy;
+  var ratingSlider = 0;
   bool _connectionStatus = true;
   final Connectivity _connectivity = Connectivity();
   StreamSubscription<ConnectivityResult> _connectivitySubscription;
@@ -90,12 +90,12 @@ class _RateMeState extends State<RateMe> {
     print(dataIs);
     setState(() {
       try {
-        if (dataIs['user']['happy'].toString() == '1' &&
+        if (dataIs['user']['happy'] == true &&
             dataIs['user']['rating'] != null) {
           happy = 1;
           selectedEmoji = Emoji.sad;
           ratingSlider = dataIs['user']['rating'];
-        } else if (dataIs['user']['happy'].toString() == '0') {
+        } else if (dataIs['user']['happy'] == false) {
           happy = 0;
           selectedEmoji = Emoji.happy;
           ratingSlider = dataIs['user']['rating'];
