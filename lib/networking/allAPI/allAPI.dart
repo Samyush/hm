@@ -1,6 +1,6 @@
 //the link to be used is LAN adapters WiFi -> IPv4 Address
 
-const KServerURL = 'dry-gorge-89141.herokuapp.com';
+const KServerURL = '10.0.2.2:8000';
 const kApiCurrentUsr = 'http://$KServerURL/api/currentUsr';
 const kApiMyRating = 'http://$KServerURL/api/rateMe';
 // 10.0.2.2:8000
