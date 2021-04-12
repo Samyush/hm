@@ -126,7 +126,7 @@ class _RateMeState extends State<RateMe> {
       final snackBar = SnackBar(
         content: Text('Sorry, please try again!'),
         action: SnackBarAction(
-          label: 'Undo',
+          label: 'Okay',
           onPressed: () {
             // Some code to undo the change.
           },
