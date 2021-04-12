@@ -129,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             child: Center(
               child: Text(
-                'Verified',
+                'Year: ' + '$yearTxt',
                 style: kButtonTextStyle,
               ),
             ),
