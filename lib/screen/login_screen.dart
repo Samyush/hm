@@ -28,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _connectionStatusNegative = true;
   final Connectivity _connectivity = Connectivity();
   StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  final formKey = GlobalKey<FormState>();
 
   final TextEditingController emailController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
@@ -151,100 +152,122 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: _connectionStatusNegative
-          ? Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Check Network Status',
-                    style: TextStyle(color: Colors.red[900], fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  SpinKitWave(
-                    color: Colors.red,
-                    size: 50.0,
-                  ),
-                ],
-              ),
-            )
-          : ModalProgressHUD(
-              inAsyncCall: showSpinner,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+    return Form(
+      key: formKey,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: _connectionStatusNegative
+            ? Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Flexible(
-                      child: Hero(
-                          tag: 'logo',
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 200.0,
-                            child: Image.asset('images/cLogo.png'),
-                          )),
+                  children: [
+                    Text(
+                      'Check Network Status',
+                      style: TextStyle(color: Colors.red[900], fontSize: 20),
                     ),
                     SizedBox(
-                      height: 48.0,
+                      height: 10,
                     ),
-                    TextField(
-                      keyboardType: TextInputType.emailAddress,
-                      textAlign: TextAlign.center,
-                      controller: emailController,
-                      onChanged: (value) {
-                        email = value;
-                      },
-                      decoration: kTextFieldDecoration.copyWith(
-                          hintText: 'Enter Your Email'),
-                    ),
-                    SizedBox(
-                      height: 8.0,
-                    ),
-                    TextField(
-                      obscureText: true,
-                      textAlign: TextAlign.center,
-                      controller: passwordController,
-                      onChanged: (value) {
-                        password = value;
-                      },
-                      decoration: kTextFieldDecoration.copyWith(
-                          hintText: 'Enter Your Password'),
-                    ),
-                    SizedBox(
-                      height: 24.0,
-                    ),
-                    RoundedButton(
-                      onPressed: () {
-                        setState(
-                          () {
-                            showSpinner = true;
-                          },
-                        );
-                        signIn(emailController.text, passwordController.text);
-                      },
-                      // onPressed: emailController.text == "" ||
-                      //         passwordController.text == ""
-                      //     ? _showMyDialog
-                      //     : () {
-                      //         setState(
-                      //           () {
-                      //             showSpinner = true;
-                      //           },
-                      //         );
-                      //         signIn(emailController.text, passwordController.text);
-                      //       },
-                      title: 'Log In',
-                      color: Colors.blueAccent,
+                    SpinKitWave(
+                      color: Colors.red,
+                      size: 50.0,
                     ),
                   ],
                 ),
+              )
+            : ModalProgressHUD(
+                inAsyncCall: showSpinner,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Flexible(
+                        child: Hero(
+                            tag: 'logo',
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: 200.0,
+                              child: Image.asset('images/cLogo.png'),
+                            )),
+                      ),
+                      SizedBox(
+                        height: 48.0,
+                      ),
+                      TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        textAlign: TextAlign.center,
+                        controller: emailController,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return "This field cannot be empty";
+                          } else if (!RegExp(
+                                  "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                              .hasMatch(value)) {
+                            return "Please enter a valid email address.";
+                          } else
+                            return null;
+                        },
+                        onChanged: (value) {
+                          email = value;
+                        },
+                        decoration: kTextFieldDecoration.copyWith(
+                            hintText: 'Enter Your Email'),
+                      ),
+                      SizedBox(
+                        height: 8.0,
+                      ),
+                      TextFormField(
+                        obscureText: true,
+                        textAlign: TextAlign.center,
+                        controller: passwordController,
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Please enter Password';
+                          }
+                          return null;
+                        },
+                        onChanged: (value) {
+                          password = value;
+                        },
+                        decoration: kTextFieldDecoration.copyWith(
+                            hintText: 'Enter Your Password'),
+                      ),
+                      SizedBox(
+                        height: 24.0,
+                      ),
+                      RoundedButton(
+                        onPressed: () {
+                          if (formKey.currentState.validate()) {
+                            setState(
+                              () {
+                                showSpinner = true;
+                              },
+                            );
+                            signIn(
+                                emailController.text, passwordController.text);
+                          }
+                        },
+                        // onPressed: emailController.text == "" ||
+                        //         passwordController.text == ""
+                        //     ? _showMyDialog
+                        //     : () {
+                        //         setState(
+                        //           () {
+                        //             showSpinner = true;
+                        //           },
+                        //         );
+                        //         signIn(emailController.text, passwordController.text);
+                        //       },
+                        title: 'Log In',
+                        color: Colors.blueAccent,
+                      ),
+                    ],
+                  ),
+                ),
               ),
-            ),
+      ),
     );
   }
 }
