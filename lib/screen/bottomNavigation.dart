@@ -34,7 +34,14 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   @override
   void initState() {
     super.initState();
-    if (ApiPuller().getUserDetail() == null) {
+    checkSession();
+  }
+
+  //
+  void checkSession() async {
+    var userData = await ApiPuller().getUserDetail();
+
+    if (userData == null) {
       _showMyDialog('Session Expired', 'Please Re-login');
     }
   }
