@@ -5,6 +5,8 @@ import 'package:hm/networking/serverConnection/perUserDemand/UserDataPuller.dart
 import 'package:hm/screen/profilePage/profile_screen.dart';
 import 'package:hm/screen/rateMe.dart';
 import 'package:hm/screen/search.dart';
+import 'package:hm/screen/welcomeScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'calendar/calendar.dart';
 import 'home_page.dart';
@@ -17,6 +19,8 @@ class BottomNavigationPage extends StatefulWidget {
 }
 
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
+  SharedPreferences sharedPreferences;
+
   int _currentIndex = 0;
   final List<Widget> _pages = [
     MyHomePage(),
@@ -30,7 +34,59 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   @override
   void initState() {
     super.initState();
-    ApiPuller().getUserDetail();
+    checkSession();
+  }
+
+  void checkSession() async {
+    var userData = await ApiPuller().getUserDetail();
+
+    if (userData == null) {
+      _showMyDialog('Session Expired', 'Please Re-login');
+    }
+  }
+
+  _showMyDialog(String label1, label2) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return CupertinoAlertDialog(
+          title: Text('SCHOOL APPS'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(label1),
+                Text(label2),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                setState(() {
+                  Navigator.pop(context);
+                });
+              },
+            ),
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                sharedPreferences.clear();
+                sharedPreferences.remove('token');
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => WelcomeScreen()),
+                    (Route<dynamic> route) => false);
+                // setState(() {
+                //   Navigator.pop(context);
+                // });
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
