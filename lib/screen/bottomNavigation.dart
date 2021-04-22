@@ -71,7 +71,9 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
             ),
             TextButton(
               child: Text('OK'),
-              onPressed: () {
+              onPressed: () async {
+                sharedPreferences = await SharedPreferences.getInstance();
+
                 sharedPreferences.clear();
                 sharedPreferences.remove('token');
                 Navigator.of(context).pushAndRemoveUntil(
