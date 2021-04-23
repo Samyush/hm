@@ -107,14 +107,6 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: 'Show Snackbar',
             onPressed: () {
               _showMyDialog('Logout?', 'Sure to Logout');
-              // sharedPreferences.clear();
-              // sharedPreferences.remove('token');
-              // Navigator.of(context).pushAndRemoveUntil(
-              //     MaterialPageRoute(
-              //         builder: (BuildContext context) => WelcomeScreen()),
-              //     (Route<dynamic> route) => false);
-//        scaffoldKey.currentState.showSnackBar(snackBar);
-//               Navigator.pushNamed(context, ChatScreen.id);
             },
           ),
         ],

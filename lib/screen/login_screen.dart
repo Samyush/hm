@@ -249,17 +249,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 emailController.text, passwordController.text);
                           }
                         },
-                        // onPressed: emailController.text == "" ||
-                        //         passwordController.text == ""
-                        //     ? _showMyDialog
-                        //     : () {
-                        //         setState(
-                        //           () {
-                        //             showSpinner = true;
-                        //           },
-                        //         );
-                        //         signIn(emailController.text, passwordController.text);
-                        //       },
                         title: 'Log In',
                         color: Colors.blueAccent,
                       ),

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xFF158A85);
-
 const kActiveColor = Color(0xFFD0B823);
 const kInactiveColor = Color(0xFFD6D3CA);
-
 const kTextLabelStyle = TextStyle(
   fontSize: 18,
   color: Color(0xFFF71F02),
